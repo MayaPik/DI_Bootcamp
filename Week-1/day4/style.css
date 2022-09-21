@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .welcome {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+  }
+
+  body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+  }
+
+  .login, .hello {
+    width: 50vw;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    color:rgb(42, 40, 40);
+
+  }
+
+  .login h1, .hello h1 {
+    font-size: 54px;
+    line-height: 80px;
+  }
+
+
+  .form #fname, .form #pass {
+    width: 40vw;
+    height: 7vh;
+    margin-top: 20px;
+    border: none;
+    background-color:ghostwhite;   
+    padding: 10px;
+
+  }
+
+  .space {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 7vh;
+  }
+
+  .forgot {
+    text-decoration: none;
+    color: rgb(42, 40, 40);
+
+  }
+
+  .login2 {
+    height: 7vh;
+    border: none;
+    color: aliceblue;
+    background-image: linear-gradient(to right, rebeccapurple , purple);
+    margin-bottom: 40px;
+  }
+
+  .login h3 { 
+    width: 40vw;
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    font-weight: normal;
+
+ } 
+ 
+  .login h3 span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
+
+ .icons {
+    margin-top: 20px;
+    font-size: 22px;
+    margin-bottom: 40px;
+ }
+
+ .icons i {
+    margin: 10px;
+ }
+
+ footer {
+    margin-top: 30px;
+}
+
+.hello {
+    background-image: linear-gradient(to bottom right,rgb(20, 6, 33), rebeccapurple , purple);
+    color: #fff;
+}
+
+.hello p {
+    font-size: 28px;
+    width: 40vw;
+}
+
+.register {
+    border: white 2px solid;
+    border-radius: 40px;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 28px;
+
+}
