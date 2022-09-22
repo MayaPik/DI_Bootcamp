@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+  }
+
+  .header ul {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    list-style: none;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  .header ul a {
+    color: antiquewhite;
+    text-decoration: none;
+  }
+
+
+  .open {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(to top left , rgb(207, 178, 222), rgb(208, 125, 217));
+    letter-spacing: 0.4em;
+
+  }
+
+  .open img {
+    height: 250px;
+    width: 250px;
+    border-radius: 70PX;
+    margin-right: 70PX;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    background-image: linear-gradient(to bottom left , rgb(207, 178, 222), rgb(208, 125, 217));
+    color: black;
+    border-top: 2px black solid;
+  }
+
+  .contact, .education .each {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 35vw;
+
+  }
+
+  .contact, .education {
+    border-right: 2px black solid;
+    width: 35vw;
+
+
+  }
+
+  .each {
+    width: 50vw;
+  }
+
+  .contact h1, .education h1 {
+    text-align: center;
+    letter-spacing: 0.6em;
+    align-items: center;
+}
+
+.body h1 {
+    letter-spacing: 0.6em;
+}
+
+.contact i {
+    margin: 10px;
+}
+
+.body h2 {
+    font-size: 18px;
+}
+
+.each {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.expirence, .skills {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.education {
+    margin-bottom: 20px;
+}
