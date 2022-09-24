@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="login-signup.css">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <header class="header">   
+     <a href="index.html" class="logo"><i class="fa-solid fa-crown"></i></a>
+ 
+        <ul>
+            <li><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><b>Sign Up</b></a></li>
+            <li><a href="login.html"><b>Log In</b></a></li>
+            <li><a href="products.html"><b>Our Products</b></a></li>
+        </ul>
+    </header>
+
+    <div id="id02" class="modal">
+  
+        <form class="modal-content animate" action="/action_page.php" method="post">
+
+        <label for="firstname"><b>First Name:</b></label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter First Name" required><br>
+
+        <label for="lastname"><b>Last Name:</b></label>
+        <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" required><br>
+     
+        <label for="uname"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required><br>
+  
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+        <label for="psw"><b>Confirm Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+        <label for="email"><b>Email Adress:</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required><br>
+
+        <input type="submit" value="Sign Up">
+
+      </form>
+    </div>
+
+    <footer id="footermain">
+        <p>Maya Pik &copy; 2022 All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
