@@ -70,7 +70,7 @@ body {
     text-align: center; 
     line-height: 2em;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .price {
@@ -86,17 +86,6 @@ body {
     color: rgb(30, 135, 30);
 }
 
-.old {
-    text-decoration: line-through;
-    margin-left: 5px;
-}
-
-.also{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
 
 .together {
     width: 80vw;
@@ -107,118 +96,6 @@ body {
     align-items: flex-start;
     padding: 10px;
 
-}
-
-.also:hover .icons {
-    display: flex;
-    position: absolute;
-    align-self: center;
-}
-
-    .icons {
-        display: none;
-    }
-
-    .icons i {
-        background-color: aliceblue;
-        opacity: 0.9;
-        margin: 10px;
-        padding: 10px;
-        width: 40px;
-        height: 35px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        border-radius: 2px;
-    }
-
-.fa-solid:hover {
-    background-color:green;
-    color: aliceblue;
-
-}
-
-    .fa-eye:hover::after {
-        content: 'Quick View';
-        font-size: 10px;
-        white-space: nowrap;
-        width: 70px;
-        justify-content: center;
-        padding: 8px;
-        border-radius: 8px;
-        color: #fff;
-        background-color: black;
-        display: flex;
-        position: relative;
-        right: 30px;
-        bottom: 70px;
-        opacity: 1;
-    }
-
-
-    .fa-bag-shopping:hover::after {
-        content: 'Add To Wishlist';
-        font-size: 10px;
-        white-space: nowrap;
-        width: 110px;
-        justify-content: center;
-        padding: 8px;
-        border-radius: 8px;
-        color: #fff;
-        background-color: black;
-        display: flex;
-        position: relative;
-        right: 50px;
-        bottom: 70px;
-        opacity: 1;
-    }
-
-
-    .fa-cart-shopping:hover::after {
-        content: 'Add To Cart';
-        font-size: 10px;
-        white-space: nowrap;
-        width: 80px;
-        justify-content: center;
-        padding: 8px;
-        border-radius: 8px;
-        color: #fff;
-        background-color: black;
-        display: flex;
-        position: relative;
-        right: 40px;
-        bottom: 70px;
-        opacity: 1;
-    }
-
-
-
-.one {
-    background-image: url(image1.png);
-    background-size: cover;
-}
-
-
-.two {
-    background-image: url(image2.png);
-    background-size: cover;
-}
-
-
-.three {
-    background-image: url(image3.png);
-    background-size: cover;
-}
-
-
-.four {
-    background-image: url(image4.png);
-    background-size: cover;
-}
-
-.five {
-    background-image: url(image5.webp);
-    background-size: cover;
 }
 
 .new, .per {
@@ -256,11 +133,6 @@ body {
     justify-content: center;
   }
 
-  button:hover {
-    background-color: green;
-    color: aliceblue;
-  }
-  
 
 #footermain {
     background-color: black;
@@ -277,3 +149,56 @@ body {
     font-size: 2em;
     margin-top: 10px;
   }
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-content {
+
+    background-color: #fefefe;
+    border: 1px solid #888;
+    margin: 25% auto 5% auto;
+    width: 90%; 
+    display: flex;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 80vh;
+
+  }
+
+input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: flex;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: x-large;
+
+    
+  }
+
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    justify-content: center;
+  }
+  
