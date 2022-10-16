@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    background-color: whitesmoke;
+  }
+
+  .header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    color: black;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+    a.current {
+    color: blue;
+  }
+
+  a {
+    color: rgb(127, 153, 169);
+    list-style: none;
+    text-decoration:none;
+    font-weight: bold;
+
+  }
+
+  .header .signin {
+    color: rgb(34, 141, 191);
+    border: 2px solid rgb(34, 141, 191);
+    border-radius: 5px;
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    margin-left: 10px;
+  }
+
+  .header a {
+    margin: 10px;
+  }
+
+  .caption {
+    text-align: center;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 30px;
+  }
+
+  .minicap {
+    text-align: center;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    margin: auto;
+    padding-top: 15px;
+
+  }
+
+  .chose {
+    text-align: center;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    margin: auto;
+    padding-top: 15px;
+    align-items: center;
+
+  }
+
+  #area {
+    color: rgb(34, 141, 191);
+    border: 2px solid rgb(34, 141, 191);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 4px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    margin: auto;
+   
+
+  }
+
+  .colum, .columone, .columtwo{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .colum {
+    margin: 25px;
+  }
+
+  .columone {
+    background-color: white;
+    width: 20vw;
+    align-items: center;    
+    padding: 40px;
+
+
+  }
+
+  .colum i {
+    color: blue;
+    margin-bottom: 20px;
+  }
+
+  .space {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(127, 153, 169);
+
+    }
+
+    .italica {
+        font-style: italic;
+        font-size: 12px;
+    }
+
+    .price {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .price h1 {
+        font-size: 49px;
+        font-weight: lighter;
+
+    }
+
+    .price span {
+        align-self: flex-end;
+        font-weight: lighter;
+
+    }
+
+.colum button {
+    background-color: rgb(72, 193, 72);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 7px;
+}
+
+.columtwo {
+    background-color: rgb(29, 29, 137);
+    width: 20vw;
+    color: aliceblue;
+    padding: 10px;
+    line-height: 30px;
+    border-radius: 6px;
+}
+
+.price h2 {
+    margin-bottom: 30px;
+}

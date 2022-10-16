@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: url("map.jpeg");
+    width: 100vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+  }
+
+  .caption {
+    text-align: center;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    margin: 50px;
+
+  }
+
+  .data .purple {
+    color: rebeccapurple;
+    font-size: 40px;
+    margin: 5px;
+  }
+
+  .rec {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+  }
+
+  .rec img {
+    height: 70px;
+    width: 70px;
+    border-radius: 60px;
+    display: grid;
+    align-items: center; 
+  margin: auto; 
+margin-bottom: 10px; 
+margin-top: 5px;}
+
+  .first {
+    margin: 40px;
+    background: linear-gradient(white 60%, rgb(195, 71, 92) 40%);
+    padding: 30px 30px 10px 30px;
+    height: 30vh;
+  }
+
+  .second {
+    margin: 40px;
+    background: linear-gradient(white 60%, blue 40%);
+    padding: 30px 30px 10px 30px;
+    align-self: flex-end;
+    height: 30vh;
+
+  }
+
+
+  .third {
+      margin: 40px;
+      background: linear-gradient(white 60%, green 40%);
+      padding: 30px 30px 10px 30px;
+      align-self: center;
+      height: 30vh;
+
+  }
+
+  .bold, .title  {
+    text-align: center;
+    color: white;
+    align-items: center;
+    margin-bottom: 3px;
+
+  }
+
+  .bold {
+    font-weight: bold;
+    }
