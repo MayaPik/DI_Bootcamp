@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .name {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+  }
+
+  .header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    color: antiquewhite;
+    background-color: black;
+    position:fixed;
+    justify-content: space-around;
+    opacity: 100%;
+
+  }
+
+  .header .name {
+    align-self: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .header ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+ .header ul a {
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    background-color: gray;
+    color: black;
+}
+.header ul li :hover, .header ul li a.current{
+    background-color: #14a840 ;
+    color: lightgreen;
+}
+
+.header .imagemike {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        animation-name: mike;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
+      .imagemike:active {
+        width: 170px;
+        height: 170px;
+      }
+      
+      @keyframes mike {
+        0%   {left:-250px; top:0px;}
+        50%  {left:250px; top:0px;}
+        100% {left:-250px; top:0px;}
+      }
+
+
+.showcase {
+    background-image: url(p02f1xvr.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.index {
+    height: 100vh;
+
+}
+
+
+.one {
+    background-attachment: fixed;
+
+}
+
+.showcase .content h2 {
+    font-size: 32px;
+    line-height: 1.2em;
+    padding: 15px;
+    letter-spacing: 2px;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.444);
+    width: 100vw;
+
+}
+
+.showcase .content h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.showcase .content h3 a {
+    text-decoration: none;
+    background-color: greenyellow;
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+
+}
+
+.showcase .content h4 {
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 10px;
+
+}
+
+
+.details {
+    background-color: antiquewhite;
+    width: 70%;
+    height: 100%;
+    margin-top: 200px;
+    justify-content: center;
+ 
+}
+
+.details img {
+    height: 65%;
+    width: 100%;
+    border: 2px solid blue;
+ }
+
+ .details .row {
+    display: flex;
+    flex-direction: row-reverse;
+ }
+
+ .details .column-1 {
+    margin: 20px;
+    border-radius: 2px solid blue;
+ }
+
+ .details .column-1 h4 {
+    background-color: blue;
+    border: 2px solid blue;
+    color: aliceblue;
+    text-align: center;
+    height: 3em;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+ }
+
+
+ .details .column-1 p{
+    background-color: aliceblue;
+    border: 1px solid blue;
+    color: blue;
+    text-align: center;
+    height: 2em;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+ }
+
+
+ .details .column-2 {
+    display: flex;
+align-items: flex-start;
+flex-direction: column;
+line-height: 2em;
+margin-left: 20px;
+}
+
+
+.details .column-2 h2 {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.column-2 .contents {
+    background-color: bisque;
+    padding-left: 30px;
+    margin-top: 50px;
+    margin-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+    border: 1px black solid;
+}
+
+.column-2 .contents a {
+    text-decoration: none;
+}
+
+.con h2 {
+    margin: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px black solid;
+
+}
+
+.con p {
+    line-height: 2em;
+    margin: 30px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.pictures .row {
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+    max-height: 100%;
+}
+
+.pictures .column {
+    display: flex;
+    flex-direction: column;
+    flex: 33.3%;
+    max-width: 33.3%;
+    height: 100vh;
+    padding: 10px;
+    padding-top: 80px;
+}
+
+
+.pictures .column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 4px;
+}
+
+.showcase .diploma {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border: 10px solid black;
+    border-radius: 5px;
+}
+
+    .pictures .column .info{
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+    text-align: center;
+    height: 2em;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 2px;
+ }
+
