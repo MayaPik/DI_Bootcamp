@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .yellowbox {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    margin: 10px;
+    border: 2px solid black;
+
+  }
+
+  .allbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .firstcol, .lastcol {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .middlerow {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .middlerow .yellowbox {
+    margin: 50px;    
+
+  }
