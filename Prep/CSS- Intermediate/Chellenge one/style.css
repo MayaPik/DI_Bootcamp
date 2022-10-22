@@ -1,0 +1,34 @@
+body {
+    background-color:dodgerblue
+}
+
+#wrap {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10%;
+    margin-left: 10%;
+    justify-content: center;
+}
+
+#nav {
+    background-color:lightskyblue;
+padding: 10px;
+}
+
+#content {
+    background-color: cornflowerblue;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px;
+
+}
+#content ul {
+    list-style: none;
+}
+
+
+.copyright {
+    display: flex;
+    justify-content: center;}
