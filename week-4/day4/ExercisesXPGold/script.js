@@ -1,51 +1,36 @@
-let numbers = [123, 8409, 100053, 333333333, 7];
+//Exercise 1 : Is_Blank
 
-function checkTheFun(numbers, i) {
-    if (numbers % 3 === 0) {
-    console.log(true)
-} else {
-    console.log(false)
-}
-}
-numbers.forEach(checkTheFun);
+Write a program to check whether a string is blank or not.
 
-//Exercise 2 : Attendance
-
-let guestList = {
-  randy: "Germany",
-  karla: "France",
-  wendy: "Japan",
-  norman: "England",
-  sam: "Argentina"
-}
-
-let userName = prompt("What is your name?", );
-if (userName in guestList) {
-    console.log("Hi! I'm " + userName +", and I'm from " + guestList[userName] + ".")
-} else {
-    console.log("Hi! I'm a guest.")
-
-}
-
-//Prompt the student for their name. If the name is in the object, console.log the name of the student and the country they come from.
-//If the name is not in the object, console.log: "Hi! I'm a guest."
+console.log(isBlank('')); --> true
+console.log(isBlank('abc')); --> false
 
 
-//Exercise 3 : Playing With Numbers
+Exercise 2 : Abbrev_name
+Instructions
+Write a JavaScript function to convert a string into an abbreviated form.
 
-let age = [20,5,12,43,98,55];
-let sum = 0;
-let highAge = 0;
+console.log(abbrevName("Robin Singh")); --> "Robin S."
 
-for (let i=0; i < age.length; i++) {
-    sum += age[i];
-    if (highAge < age[i]) {
-        highAge = age[i]
-    }
-}
 
-console.log(sum);
-console.log(highAge);
+Exercise 3 : SwapCase
+Instructions
+Write a JavaScript function which takes a string as an argument and swaps the case of each character.
+For example :
 
-//1. Console.log the sum of all the numbers in the age array.
-//2. Console.log the highest age in the array.
+if you input 'The Quick Brown Fox' 
+the output should be 'tHE qUICK bROWN fOX'.
+
+
+Exercise 4 : Omnipresent Value
+Instructions
+Create a function that determines whether an argument is omnipresent for a given array.
+A value is omnipresent if it exists in every subarray inside the main array.
+To illustrate:
+
+[[3, 4], [8, 3, 2], [3], [9, 3], [5, 3], [4, 3]]
+// 3 exists in every element inside this array, so is omnipresent.
+Examples
+
+isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 1) ➞ true
+isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6) ➞ false

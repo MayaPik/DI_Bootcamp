@@ -167,20 +167,20 @@ A penny is 0.01
 
 function totalVacationCost() {
 
-    const MESSAGENIGHTS = "How many nights do you want to stay?"
-    let numOfNights = prompt(MESSAGENIGHTS);
-    while (/^[1-9]+$/i.test(numOfNights) == false) {
-        numOfNights = prompt(MESSAGENIGHTS);
+    const MESSAGE_NIGHTS = "How many nights do you want to stay?"
+    let numOfNights = prompt(MESSAGE_NIGHTS);
+    while (/^[0-9]+$/i.test(numOfNights) == false) {
+        numOfNights = prompt(MESSAGE_NIGHTS);
     }
-    const MESSAGEDAYS = "How many days do you want to rent the car?"
-    let numOfDays = prompt(MESSAGEDAYS);
-    while (/^[1-9]+$/i.test(numOfDays) == false) {
-        numOfDays = prompt(MESSAGEDAYS);
+    const MESSAGE_DAYS = "How many days do you want to rent the car?"
+    let numOfDays = prompt(MESSAGE_DAYS);
+    while (/^[0-9]+$/i.test(numOfDays) == false) {
+        numOfDays = prompt(MESSAGE_DAYS);
     }
-    const MESSAGEPLACE= "Where is your destination?"
-    let destinationPlace = prompt(MESSAGEPLACE);
+    const MESSAGE_PLACE= "Where is your destination?"
+    let destinationPlace = prompt(MESSAGE_PLACE);
     while (/^[a-z]+$/i.test(destinationPlace) == false) {
-        destinationPlace = prompt(MESSAGEPLACE);
+        destinationPlace = prompt(MESSAGE_PLACE);
     }
     
     function  hotelCost() {
