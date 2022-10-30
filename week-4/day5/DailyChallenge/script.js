@@ -1,52 +1,41 @@
-let arr = prompt("Enter several words (separated by commas)").split(",");
-let startsOfFirst = "****";
 
-function longest_str_in_array(arra)
-  {
-    var max_str = arra[0].length;
-    var ans = arra[0];
-    for (let j = 0; j < arra.length; j++) {
-        let maxi = arra[j].length;
-        if (maxi > max_str) {
-            ans = arra[j];
-            max_str = maxi;
+function printTheSong() {
+    let word = "";
+    number = askANumber();
+    for (let i=0; i< number; i++) {
+        if (i===0) {
+            word = "it";
+        } else {
+            word = "them";
         }
+
+    console.log( number + " bottles of beer on the wall ");
+    console.log( number + " bottles of beer");
+    console.log( "Take " + (i+1) + " down, pass " + word + " around");
+    console.log( (number-i-1) + " bottles of beer on the wall ");
+    console.log("");
+        number = (number-i-1);
     }
-    return ans;
+    console.log( number + " bottles of beer on the wall ")
+    console.log( "Take " + number + " down, pass them around")
+    console.log( "no bottle of beer on the wall")
+
+
+
+
 }
 
- x = longest_str_in_array(arr);
-
- let FirstNum = x.length ;
-
-
-for (let k=0; k < FirstNum; k++) {
-    startsOfFirst += "*";
-}
-console.log (startsOfFirst) 
-
-
-
-for (let i=0; i<arr.length; i++) {  
-let spacesNum = (x.trim(" ").length - arr[i].trim(" ").length); 
-let SpacesOfEnd = " ";
-    for (let m=0; m<spacesNum; m++) {
-        SpacesOfEnd += " ";
+function askANumber() {
+    let NUMBER = "CHOOSE A NUMBER TO START WITH";
+    let number = prompt(NUMBER);
+    if (number > 99) {
+        alert("⛔️ Sorry! too much, try again");
+        return askANumber();
+      }
+      return number;
     }
-    console.log("* " + arr[i].trim(" ") + SpacesOfEnd + " *");
-}
-
-
-console.log (startsOfFirst)
 
 
 
 
-/*
-Console.log the words one per line, in a rectangular frame as seen below.
-Check out the Hints and Requirements below.
-For example, if the user gives you:
-
-Hello, World, in, a, frame
-you will transform it to : ["Hello", "World", "in", "a", "frame"]
-that will get displayed as:*/
+printTheSong();
