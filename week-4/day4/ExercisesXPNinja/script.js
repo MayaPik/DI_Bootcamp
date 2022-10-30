@@ -1,74 +1,103 @@
-//Exercise 1 : Checking The BMI
+//Exercise 1: Random Number
 
-let personOne = {
-    fullName: "Maya Pik",
-    mass: 49,
-    height: 1.67,
-    bmi: function() {
-      return (this.mass/ (this.height**2));
-    }
-  };
 
-  let personTwo = {
-    fullName: "Orit Pik",
-    mass: 55,
-    height: 1.66,
-    bmi: function() {
-      return (this.mass/ (this.height**2));
-    }
-  };
+function getRandomInt() {
+  return Math.floor(Math.random() * 100);
+}
 
-  if (personOne.bmi() > personTwo.bmi()) {
-    console.log(personOne.fullName + " has larger BMI")
+let x = getRandomInt();
+
+
+for (let i=0; i<=x; i++) {
+  console.log(i);
+
+}
+
+//Get a random number between 1 and 100. Console.log all even numbers from 0 to the random number.
+
+
+//Exercise 2: Capitalized Letters
+
+function capitalize(string) {
+  let firstString = "";
+  let secondString = "";
+  for (let j = 0; j < string.length; j ++) {
+    if (j%2 === 0) {
+    firstString += string[j].toUpperCase();
   } else {
-    console.log(personTwo.fullName + " has larger BMI")
-
+    firstString += string[j];
   }
+}
+  for (let k = 0; k < string.length; k ++) {
+    if (k%2 != 0) {
+    secondString += string[k].toUpperCase();
+    } else {
+      secondString += string[k];
+    }
+}
+  return [firstString, secondString];
+
+}
+
+console.log(capitalize("abcdef")) ;
+
+
+//Exercise 3 : Is Palindrome?
+
+function palindromeChecker(string) {
+
+  for (let m=0; m<string.length; m++) {
+    if (string[m] == string.charAt((string.length - m - 1))) {
+          continue
+  } else {
+    return "not a palidrome";
+  }
+}
+return "a palindrome";
+
+}
+
+console.log(palindromeChecker("mamam"));
 
 
 
-//Exercise 2 : Grade Average
+//Exercise 4 : Biggest Number
+function biggestNumberInArray(arrayNumber)  {
 
-const grades = [55,44,90,53];
 
-function findAvg(gradesList) {
+for (let m=0; m < arrayNumber.length -1; m++) {
+    for(let j = 0; j < ( arrayNumber.length - m -1); j++){
+        if(arrayNumber[j] > arrayNumber[j+1]){
+        let newNum = arrayNumber[j]
+        arrayNumber[j] = arrayNumber[j + 1]
+        arrayNumber[j+1] = newNum;
+        } 
+    }
+}
+return (arrayNumber[arrayNumber.length-1]);
+}
+const array = [-1,0,3,100, 99, 2, 99] ;// should return 100 
+const array2 = ['a', 3, 'm', 4, 2]; // should return 4 
+const array3 = []; // should return 0
+
+
+console.log(biggestNumberInArray(array));
+console.log(biggestNumberInArray(array2));
+console.log(biggestNumberInArray(array3));
+
+
+//Exercise 5: Unique Elements
+
+function unique(list) {
+  let newArray = [];
+  for (let k = 0; k < list.length; k ++) {
+    if (newArray.includes(list[k]) === false) {
+    let newLetter = list[k];
+    newArray.push(newLetter);
+  }
     
-    let sum = 0;
-    for (let i = 0; i < gradesList.length; i++) {
-      sum += gradesList[i];
-    }
-    let averageGrade = (sum / gradesList.length);
-    console.log(averageGrade);
-    console.log(calculate(averageGrade))
-    return averageGrade;
-   
-}
+  }
+  return newArray;
 
-function calculate(averageGrade) {
-    if (averageGrade > 65) {
-        return "passed";
-        } else {
-        return "Failed, must repeat the course";
-    }
-}
-
-findAvg(grades);
- 
-
-
-/*
-
-In this exercise we will be creating a function which takes an array of grades as an argument and will console.log the average.
-
-Create a function called findAvg(gradesList) that takes an argument called gradesList.
-
-Your function must calculate and console.log the average.
-
-If the average is above 65 let the user know they passed
-
-If the average is below 65 let the user know they failed and must repeat the course.
-Bonus Try and split parts 1,2 and 3,4 of this exercise to two separate functions.
-Hint One function must call the other.
-
-
-*/
+} 
+console.log(unique([1,2,3,3,3,3,4,5]));
