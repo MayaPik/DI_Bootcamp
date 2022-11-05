@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+
+<body>
+
+  <form id="form1"> 
+    <label>First name:</label><input type="text" name="fname" value="David"><br> 
+    <label>Last name: </label><input type="text" name="lname" value="BenGurion"><br> 
+    <input type="submit" value="Submit"> 
+</form> 
+
+
+<form id="form2" onsubmit="getvalue2()"">
+  <label>
+    <input type="radio" name="age" value="young" checked> less than 18
+  </label>
+  <label>
+    <input type="radio" name="age" value="mature"> from 18 to 50
+  </label>
+  <label>
+    <input type="radio" name="age" value="senior"> more than 60
+  </label>
+  <input type="submit" value="Submit"> 
+</form>
+
+<select id="select1"> 
+  <option value="apple">Middle School</option>
+  <option value="pear">University</option>
+  <option value="banana">College</option>
+</select>  
+
+<button onclick="choise()">hello</button>
+
+
+  
+<table id="sampleTable" border="1"> 
+  <tr>
+      <td>Row1 cell1</td> 
+      <td>Row1 cell2</td>
+  </tr> 
+  <tr>
+      <td>Row2 cell1</td> 
+      <td>Row2 cell2</td>
+  </tr> 
+  </table>
+  <input type="button" onclick="insertRow()" value="Insert row">  
+
+  <br><br>
+  <button onclick="alert(this.innerHTML)">Click me</button>
+
+  <br><br>
+
+  <button id="btn">Click me</button>
+  <button id="btn1">Hey Hey</button>
+  <br><br>
+
+
+  <div id="div">
+    <button id="jsstyle">Style</button>
+</div>
+
+<form name="my">
+  First: Enter in the input field <input type="text" value="text"><br>
+  Second: Click "submit": <input type="submit" value="Submit">
+</form>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
