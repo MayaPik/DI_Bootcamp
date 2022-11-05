@@ -1,4 +1,4 @@
-# DI_Bootcamp- Maya Pik
+# DI_Bootcamp
 
 [Portfolio](https://mayapik.github.io/DI_Bootcamp/PortfolioProject/index.html)
 
