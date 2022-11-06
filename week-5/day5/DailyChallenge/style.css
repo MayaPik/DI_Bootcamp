@@ -6,11 +6,17 @@
 .eachLine {
     display: flex;
     justify-content: space-around;
-    width: 40vw;
+    width: 30vw;
+    margin-top: 10px;
 
 }
 
 #todo {
-    width: 40px;
+    width: 30px;
     align-items: center;
+}
+
+body {
+    margin: 20px;
+
 }
