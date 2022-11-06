@@ -1,20 +1,60 @@
-let form = document.getElementById('libform');
+const tasks = [
+];
 
-//let button = document.getElementById(lib-button);
-form.addEventListener("submit", getStory)
+let i = 0;
+let form = document.getElementById('todo');
+let add = document.getElementById('newTask');
+let list = document.getElementsByClassName('listTasks')[0];
 
-function getStory(event) {
-let fullStory = document.getElementById('story');
-let nounI = document.getElementById('noun').value;
-let adI = document.getElementById('adjective').value;
-let personI = document.getElementById('person').value;
-let verbI = document.getElementById('verb').value;
-let placeI = document.getElementById('place').value;
+form.addEventListener('submit', addTask);
 
-if (nounI != "" && adI != "" && personI != "" && verbI != "" && placeI !="") {
-fullStory.innerText = "Hello Everyone I a like to sit on " + nounI + " but only if it is " + adI + ". I really like it when " + personI + " comes to visit because when we " +
-verbI + " together is so much fun. Anyhow, when we meet we like to visit " + placeI;
+
+function addTask(event) {
+    if (add.value !== "") {
+        let done = false
+        let task_id = i
+        let text =add.value;
+       tasks.push({task_id, text, done});
+
+       let x = document.createElement('button')
+       x.addEventListener('click', deleteTask);
+
+        let xFont = document.createElement('i')
+        xFont.setAttribute('class', 'fa-solid fa-x');
+        x.appendChild(xFont)
+
+       let newOne = document.createElement('div')
+       newOne.appendChild(x)
+       x.style.marginRight = '20px'
+
+       list.appendChild(newOne);
+       newOne.innerHTML += add.value;
+
+       let checkBox = document.createElement('input')
+       checkBox.setAttribute('type', 'checkbox');
+       checkBox.setAttribute('data-task-id', i)
+       newOne.appendChild(checkBox);
+
+        newOne.setAttribute('class', 'eachLine')
+        i++;
+
+
+    }
+    event.preventDefault();
+    
 }
-event.preventDefault()
 
-}
+list.addEventListener('click', event => {
+    let number = event.target.dataset.taskId;
+    if (tasks[number].task_id == number) {
+        tasks[number].done = !tasks[number].done ;
+        list.getElementsByTagName('div')[number].classList.toggle('todo-complete');
+    } 
+   
+});
+
+//Create a function named deleteTask(), that as soon as the user clicks on the “X” button, delete that specific task from the array listTasks.
+
+function deleteTask(event) {
+    console.log(event)
+    }

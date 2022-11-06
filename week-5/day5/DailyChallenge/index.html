@@ -2,24 +2,25 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <title>Challenge: Mad Libs</title>
+  <title>todo List</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/5e6676adce.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
  </head>
  <body>
 
-    <h1>Mad Libs</h1>
-
-    <form id="libform">
-        <label for="noun">Noun:</label><input type="text" id="noun"><br>
-        <label for="adjective">Adjective:</label><input type="text" id="adjective"><br>
-        <label for="person">Someone's Name:</label><input type="text" id="person"><br>
-        <label for="verb">Verb:</label><input type="text" id="verb"><br>
-        <label for="place">A place:</label><input type="text" id="place"><br>
-        <button id="lib-button">Lib it!</button>
+    <h1>To Do List</h1>
+    <form id="todo">
+        
+       <input type="text" id="newTask" placeholder="New Task"><br>
+        <button type="submit" id="submit">Submit</button>
     </form>
 
-    <p>Generated story: 
-    <span id="story"></span>
-    </p>
+    
+    <div class="listTasks">
+
+    </div>
 
     <script src="script.js"></script>
 
