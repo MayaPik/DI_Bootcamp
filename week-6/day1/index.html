@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+      #square1, #square2, #square3 {
+      float: left;
+      margin: 5px;
+      padding: 10px;
+      text-align: center;
+      background-color: aqua;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!--
+    <p id="demo"></p>
+    <button onclick="stopTheTime()">Stop time</button>
+
+    <div class="banner">10000 SECONDS</div>
+
+    <img src="train.gif" id="train">-->
+
+    <div id="square1" draggable="true" ondragstart="dragStart(event)">square1</div>
+    <div id="square2" draggable="true" ondragstart="dragStart(event)">square2</div>
+    <div id="square3" ondrop="dragDrop(event)" ondragover="allowDrop(event)" ondragenter="allowEnter(event)" ondragleave="allowLeave(event)">square3</div>
+
+  <script>
+
+      function allowDrop(event) {
+        event.preventDefault(); // Necessary. Allows us to drop.
+      }
+
+      function dragStart(event) {
+      //set the data to be dragged
+      event.dataTransfer.setData("text", event.target.id);
+      }
+
+      function dragDrop(event) {
+      event.preventDefault();
+      let data = event.dataTransfer.getData("text");
+      let box = document.getElementById(data)
+      event.target.appendChild(box);
+      }
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+.banner {
+    width: 100vw;
+    height: 30vh;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    text-align: center;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+#train {
+    position: relative;
+    cursor: pointer;
+  }
+
+  

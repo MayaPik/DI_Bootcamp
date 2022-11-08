@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <style>
+  
+#add-box {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #BDFCED;
+  color: #00DECF;
+  font-size: 50px;
+  vertical-align: middle;
+  border: 0;
+  cursor: pointer;
+}
+
+.box {
+  float: left;
+  width: 100px;
+  height: 100px;
+  animation: expand .5s ease-in-out;
+}
+  @keyframes expand {
+  from {
+    transform: scale(0);
+  }
+
+}
+
+ </style>
+</head>
+
+<body>
+  <button id="add-box">+</button>
+  <script src="script.js"></script>
+</body>
+</html>

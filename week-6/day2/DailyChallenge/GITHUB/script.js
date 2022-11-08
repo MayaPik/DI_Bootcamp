@@ -9,9 +9,9 @@ let section = document.getElementsByClassName("listPlanets")[0];
 planet.forEach(element => {
   let elementFull = document.createElement('div');
   elementFull.className = "planet";
+
   let text = document.createTextNode(element);
   elementFull.appendChild(text);
-  elementFull.style.color = 'white'
   //Finally append each div to the <section> in the HTML (presented below).
   section.appendChild(elementFull);
 });
