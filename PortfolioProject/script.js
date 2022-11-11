@@ -1,6 +1,6 @@
 let i = 0;
 let j=0;
-let txt = " Hello there"
+let txt = " Hello World"
 let txt2 = "My name is Maya Pik"
 let speed = 50;
 let about = document.getElementById('about')
@@ -20,9 +20,6 @@ function typeWriter() {
     j++;
     setTimeout(typeWriter, speed+10);
   }
-  if (j >= txt2.length) {
-    setTimeout(scroll, 1000);
-}
   buttonGet.classList.remove('light')
 
 }
@@ -47,8 +44,8 @@ function scroll() {
     let scrolling = document.getElementById("aboutMe")
     console.log(scrolling)
     scrolling.scrollIntoView();
-    
- }
+}
+
 
  setTimeout(light, 6000);
 
@@ -57,3 +54,12 @@ function scroll() {
     buttonGet.classList.add('light')
     }
  }
+let getKnow = document.getElementById('getKnow')
+getKnow.addEventListener('click', startScroll)
+function startScroll(){
+ if (j >= txt2.length) {
+  setTimeout(scroll, 1);
+} else {
+  setTimeout(scroll, 2500);
+
+} }

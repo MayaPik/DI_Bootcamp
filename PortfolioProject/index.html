@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Maya Pik">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-
     <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media= "screen and (max-width:768px)" href="moblie.css">
+    
     <style type="text/css">
-        #mc_embed_signup{ clear:left; font:14px Helvetica,Arial,sans-serif;  width:100vw;}
-    </style>
+      #mc_embed_signup{ clear:left; font:14px Helvetica,Arial,sans-serif;  width:100vw;}
+  </style>
+    
 
     <title>Maya Pik</title>
   </head>
   
   <body>
     <div class="body"  id="about">
-
-
-      <nav class="navbar navbar-expand-lg p-1 bg-dark text-white">
+      <nav class="navbar navbar-expand-lg navbar-expand-md p-1 bg-dark text-white">
         <div class="container-fluid">
           <a class="navbar-brand text-white ps-5" href="#"> <i class="fa-solid fa-code fa-1x text-light"> </i> Maya Pik <i class="fa-solid fa-code fa-1x text-light"></i>
           </a>
@@ -50,12 +53,12 @@
       </nav> 
 
 
-        <div class="d-flex align-items-center flex-column bg-dark">
+        <div class="d-flex align-items-center flex-column bg-dark helloworld">
 
-            <h1 class="m-5 display-3 col-lg-6 col-md-10 col-sm-2 p-3 text-center bold text-light" id="first"><i id="cookie" class="fa-solid fa-cookie-bite fa-2x"></i></h1>
-            <h3 class="col-lg-6 col-md-10 col-sm-6 text-center text-light" id="second"></h3>
+            <h1 class="m-5 display-3 col-lg-6 col-md-10 col-sm-8 p-3 text-center bold text-light" id="first"><i id="cookie" class="fa-solid fa-cookie-bite fa-2x"></i></h1>
+            <h3 class="col-lg-6 col-md-10 col-sm-8 text-center text-light" id="second"></h3>
 <br>
-            <h5 class="col-lg-6 col-md-10 col-sm-6 text-center text-light id=third">I wrote <span class="text-success" id="lines">21704</span> lines of code until now</h5>
+            <h5 class="col-lg-6 col-md-10 col-sm-6 text-center text-light p-1 id=third">I wrote <span class="text-success" id="lines">21704</span> lines of code until now</h5>
  <br><br>
                   <button id="getKnow" class="btn mb-5 m-2">Get to know me</button>
                   <h5 class="col-lg-6 col-md-10 col-sm-6 text-center text-light" id="hidden"></h5>
@@ -65,15 +68,17 @@
 
         </div>
 
+
+
         <div >
           <div class="green-background">
 
 
         <section class="section about-section" id="aboutMe">
-            <h4 class="row p-3 pt-5 d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light">[1] About Me</h4>
+            <h4 class="rw p-2 d-flex align-items-center justify-content-center text-light">[1] About Me</h4>
 
             <div class="container">
-                <div class="row align-items-center flex-lg-row-reverse flex-sm-column-reverse justify-content-center">
+                <div class="row align-items-center flex-lg-row-reverse flex-sm-column-reverse justify-content-center flex-column-reverse">
                     <div class="col-lg-6">
                         <div class="about-text go-to">
                             <h5 class="theme-color mb-4"> I am a Full Stack Developer based in Tel Aviv, Israel <i class="fa-solid fa-venus text-danger fa-1x"></i></h5>
@@ -84,8 +89,8 @@
                                 Nam ex purus, tempus vel tristique non, maximus eget risus. Maecenas auctor nec massa ut interdum. Duis maximus congue magna et iaculis. 
                                 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                                 </div>
-                                <div class="row">
-                                <div class="col-lg-4">
+                                <div class="row languages">
+                                <div class="col-lg-4 col-sm-5 col-md-5 col-9">
                     <h5 class="purple">Languages I speak : </h5>
                     <ul class="listcode">
                     <li> <i class="fa-brands fa-html5"></i> HTML</li>
@@ -93,7 +98,7 @@
                     <li> <i class="fa-brands fa-js-square"></i> JAVASCRIPT</li>
                     </ul>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="col-lg-4 col-sm-5 col-8">
                     <h5 class="purple">Dev Tools : </h5>
                     <ul class="listcode">
                     <li> <i class="fa-brands fa-bootstrap"></i> BOOTSTRAP</li>
@@ -104,7 +109,7 @@
                   </div>
                         </div>
               
-                    <div class="col-lg-3 col-sm-6 d-sm-flex justify-content-sm-center m-5">
+                    <div class="col-lg-3 col-md-3 col-sm-4 d-sm-flex col-4 justify-content-center m-1">
                         <div class="about-avatar">
                             <img src="images/ME.png" title="" alt="" id="myImage">
                         </div>
@@ -118,36 +123,36 @@
         <div class="bg-danger background">
 
 
-        <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light" id="portfolio"> [2] Portfolio</h4>
+        <h4 class="row p-3 pt-5 d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light" id="portfolio"> [2] Portfolio</h4>
 
-        <section class="section p-4 portfolio m d-flex flex-wrap justify-content-center">
+        <section class="section p-4 portfolio d-flex flex-wrap justify-content-center">
           
-        <div class="card col-lg-3 col-sm-5 m-2">
+        <div class="card col-lg-3 col-md-4 col-sm-4 m-2">
           <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day5/miniProject2/index.html?fbclid=IwAR2NLMNT2hT2uCuI7vg2SBI8jh2j8XlWPqTujHRVoqF8BghTJM9k4qY1gkM" onclick="window.open(href)" target=”_blank” >
             <img class="card-img " src="images/portfolio/drums.png" alt="Card image cap" >
           </a>
           </div>
-          <div class="card col-lg-3 col-sm-5 m-2">
+          <div class="card col-lg-3 col-md-4 col-sm-4 m-2">
             <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day5/miniProject1/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolio/painting.png" alt="Card image cap">
             </a>
           </div>
-          <div class="card col-lg-3 col-sm-5 m-2">
+          <div class="card col-lg-3 col-md-4 col-sm-4 m-2">
             <a href="https://mayapik.github.io/DI_Bootcamp/Prep/MyProject_Mike/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolioimg/3.png" alt="Card image cap">
             </a>
           </div>
-          <div class="card col-lg-3 col-sm-5 m-2">
+          <div class="card col-lg-3 col-md-4 col-sm-4 m-2">
             <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day2/ExercisesXPNinja/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolio/calender.png" alt="Card image cap">
             </a>
           </div>
-          <div class="card col-lg-3 col-sm-5 m-2">
+          <div class="card col-lg-3  col-md-4 col-sm-4 m-2">
             <a href="https://mayapik.github.io/DI_Bootcamp/Prep/MyProject_Mike/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolioimg/5.png" alt="Card image cap">
             </a>
           </div>
-          <div class="card col-lg-3 col-sm-5 m-2">
+          <div class="card col-lg-3  col-md-4 col-sm-4 m-2">
             <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day4/ExercisesXPNinja/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolio/tip.png" alt="Card image cap">
             </a>
@@ -156,8 +161,8 @@
         </div>
 
 <div class="green-background">
-<section class="section blog m-5 "  id="blog">
-        <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light">[3] Blog</h4>
+<section class="section blog pb-4" id="blog">
+        <h4 class="row pb-5 d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light">[3] Blog</h4>
 
 
         <div class="card-group">
@@ -189,14 +194,15 @@
 
         </section>
       </div>
-<div id="contact" class="contact-area section-padding">
+
+<div id="contact" class="contact-area section-padding bg-danger pt-5">
 	<div class="container">										
 					
 		<div class="row">
             <div class="col-lg-5 d-flex flex-column justify-content-center">
-                <h2 class="text-danger align-self-center m-1">Get in Touch</h2><br>
+                <h2 class="text-light align-self-center p-1">Get in Touch</h2><br>
                 <div class="align-self-center single_address">
-                    <a href="https://github.com/MayaPik"><i class="fa-brands fa-github bg-danger text-white"></i></a>    
+                    <a href="https://github.com/MayaPik" ><i class="fa-brands fa-github bg-danger text-white"></i></a>    
                     <a href="https://www.linkedin.com/in/maya-pik-47916173/"><i class="fa-brands fa-linkedin  bg-danger text-white"></i></a>
                     <a href="https://www.facebook.com/mayapik"><i class="fa-brands fa-facebook bg-danger text-white"></i></a>               
                 </div>
