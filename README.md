@@ -1,7 +1,7 @@
 # DI_Bootcamp
 
 ## Hello ! I am Maya. I am a student in DI Bootcamp. This repo is dedicated to all of my assignments during the course 
-#I learn JavaScript
+### So far I have learned HTML, CSS, JavaScript
 
 [Portfolio](https://mayapik.github.io/DI_Bootcamp/PortfolioProject/index.html)
 
