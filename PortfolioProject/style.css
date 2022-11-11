@@ -123,9 +123,11 @@ img {
     box-shadow: none;
     color: #232434;
     font-size: 16px;
-    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     width: 100%;
     padding-left: 30px;
+    padding-top: 10px;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -144,11 +146,9 @@ img {
     border-radius: 30px;
     background: rgb(72, 0, 0);
     color: #fff;
-    margin: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
     outline: medium none !important;
-    padding: 15px 27px;
     text-transform: capitalize;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
