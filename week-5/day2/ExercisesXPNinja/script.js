@@ -1,13 +1,40 @@
-function showCalendar(year, month) {
 
-let day = new Date();
+let myYear = document.getElementById('myYear')
+let myMonth = document.getElementById('myMonth')
+
+
+myYear.addEventListener('keydown', checkLetter);
+myMonth.addEventListener('keydown', checkLetter);
+
+
+function checkLetter(event) {
+  if (event.keyCode < 65 || event.keyCode > 90) {
+ } 
+ else {
+  event.preventDefault();
+
+ }
+}
+let submit = document.getElementById('submit')
+
+submit.addEventListener('click', showCalendar)
+
+function showCalendar(year, month) {
+  year = myYear.value ;
+  month = myMonth.value-1;
+
+  let theDate =document.createElement('div')
+    document.body.appendChild(theDate)
+    theDate.innerHTML = "Calender for " + myYear.value + "/" + myMonth.value;
+  let day = new Date();
 
   day.setFullYear(year);
   day.setMonth(month-1);
 
   firstDay = day.getDay()
+  console.log(firstDay)
 
-  let daysOfm = new Date(year,month, 0).getDate();
+  let daysOfm = new Date(year,month-1, 0).getDate();
   console.log(daysOfm)
   let tbl = document.createElement("table"); // create body of the calendar
 
@@ -87,5 +114,3 @@ let day = new Date();
   tbl.setAttribute("border", "1");
 
 }
-
-showCalendar(2022, 11)

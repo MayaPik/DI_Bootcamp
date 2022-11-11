@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-html,h1,h2,h3,h4,h5,h6,a{
-    font-family: "Raleway";
+body {
+    font-family: "SF UI Text", "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
+.body {
+    height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+
+}
+
+#getKnow {
+    background-color: rgb(203, 69, 69);
+}
+
+.light {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 
 .current, .nav-link:hover {
     color: gray;
@@ -10,38 +30,63 @@ html,h1,h2,h3,h4,h5,h6,a{
 }
 
 .body {
-    background-image: url(images/headerback.jpg);
+    background-image: url(images/matrix-356024_1920.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position:center;
     background-attachment: fixed;
 
 }
-
-.about-avatar img {
-    max-width: 100%;
-    height: 100%;
+.green-background {
+    background-color: #005d00;
+    padding-top: 30px;
+    color: #f6f6f6;
+    height: 100vh;
 }
+
+.background {
+    padding-top: 30px;
+    color: #f6f6f6;
+    height: 100vh;
+}
+.about-avatar img {
+        width: 100%;
+        height: 100%
+      }
+      
+.about-avatar img:hover {
+    animation: route 1s linear infinite;
+    }
+
+  @keyframes route {
+    25% {
+        transform: rotate(20deg); /* W3C */
+    }
+    75% {
+        transform: rotate(-20deg); /* W3C */
+
+    }
+  }
+
 img {
     vertical-align: middle;
-    border-style:solid;
-    border-radius: 500px;
 }
 
-.blog .card img {
-    width: 100%;
-    height: 50%;
+.listcode {
+    list-style: none;
 }
 
-.blog .card {
-    height: 500px;
+.purple {
+    color: rgb(203, 129, 226);
 }
 
 .portfolio img {
-    max-width: 100%;
-    height: 100%;
-}
+    min-width: 100%;
+    min-height: 100%;
+    position:absolute;
+    height: 200px;
 
+}
 
 .portfolio .card {
     height: 200px;
@@ -86,6 +131,17 @@ img {
         opacity: 1;
     }
     
+
+
+.blog .card img {
+    width: 100%;
+    height: 10%;
+}
+
+.blog .card {
+    height: 500px;
+}
+
     .btn-contact-bg {
         border-radius: 30px;
         color: #fff;

@@ -9,18 +9,16 @@
     <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         #mc_embed_signup{ clear:left; font:14px Helvetica,Arial,sans-serif;  width:100vw;}
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
 
     <title>Maya Pik</title>
   </head>
   
   <body>
-    <div class="body">
+    <div class="body"  id="about">
 
 
-      <nav class="navbar navbar-expand-lg p-1 bg-danger text-white">
+      <nav class="navbar navbar-expand-lg p-1 bg-dark text-white">
         <div class="container-fluid">
           <a class="navbar-brand text-white ps-5" href="#"> <i class="fa-solid fa-code fa-1x text-light"> </i> Maya Pik <i class="fa-solid fa-code fa-1x text-light"></i>
           </a>
@@ -31,19 +29,19 @@
             <span class="navbar-text ms-auto">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
               <li class="nav-item">
-                <a class="nav-link active text-light current" aria-current="page" href="#">Home</a>
+                <a class="nav-link active text-danger current" aria-current="page" href="#"> [0] Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#about" >About</a>
+                <a class="nav-link text-danger" href="#aboutMe" > [1] About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#portfolio">Portfolio</a>
+                <a class="nav-link text-danger" href="#portfolio">[2] Portfolio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#blog">Blog</a>
+                <a class="nav-link text-danger" href="#blog">[3] Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#contact">Contact</a>
+                <a class="nav-link text-danger" href="#contact">[4] Contact</a>
               </li>
             </ul>
             </span>
@@ -52,102 +50,145 @@
       </nav> 
 
 
-        <div class="d-flex align-items-center flex-column bg-opacity-75 bg-white" id="about">
-            <h1 class="m-5 display-3 col-lg-6 col-md-10 col-sm-2 p-3 text-center bold">Hello There! Welcome to my offical website <i class="fa-solid fa-cookie-bite fa-1x"></i></h1>
-            <h5 class="col-lg-6 col-md-10 col-sm-6 text-center">I wrote <span class="text-success">2,989</span> lines of code until now</h5>
- 
-                  <button type="submit" class="btn btn-danger mb-5 m-2">Get to know me</button>
-    
+        <div class="d-flex align-items-center flex-column bg-dark">
+
+            <h1 class="m-5 display-3 col-lg-6 col-md-10 col-sm-2 p-3 text-center bold text-light" id="first"><i id="cookie" class="fa-solid fa-cookie-bite fa-2x"></i></h1>
+            <h3 class="col-lg-6 col-md-10 col-sm-6 text-center text-light" id="second"></h3>
+<br>
+            <h5 class="col-lg-6 col-md-10 col-sm-6 text-center text-light id=third">I wrote <span class="text-success" id="lines">21704</span> lines of code until now</h5>
+ <br><br>
+                  <button id="getKnow" class="btn mb-5 m-2">Get to know me</button>
+                  <h5 class="col-lg-6 col-md-10 col-sm-6 text-center text-light" id="hidden"></h5>
+
               </form>
             </div>
-    
 
         </div>
 
-        <div class="bg-light">
+        <div >
+          <div class="green-background">
 
 
-        <section class="section about-section" id="about">
-            <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-danger">About Me</h4>
+        <section class="section about-section" id="aboutMe">
+            <h4 class="row p-3 pt-5 d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light">[1] About Me</h4>
 
             <div class="container">
-                <div class="row align-items-center flex-lg-row-reverse flex-sm-column-reverse">
+                <div class="row align-items-center flex-lg-row-reverse flex-sm-column-reverse justify-content-center">
                     <div class="col-lg-6">
                         <div class="about-text go-to">
-                            <h6 class="theme-color lead mb-4">A Full Stack Developer &amp; based in Tel Aviv, Israel  <i class="fa-solid fa-venus text-danger fa-1x"></i></h6>
-                            <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
-                           
+                            <h5 class="theme-color mb-4"> I am a Full Stack Developer based in Tel Aviv, Israel <i class="fa-solid fa-venus text-danger fa-1x"></i></h5>
+                            <p> <i class="fa-solid fa-code fa-1x"></i> I love to code things from scratch! <i class="fa-solid fa-code fa-1x"></i>  <br><br>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eleifend libero id diam sodales aliquam. Suspendisse leo mi, commodo at mauris sit amet, elementum sodales nisi.
+                              Vivamus feugiat mauris a lacus vulputate, non porta nunc ultrices. </p>
+                              <p> <i class="fa-brands fa-github fa-1x"></i> I am an Open source contributer.  <i class="fa-brands fa-github fa-1x"></i>  <br> <br>
+                                Nam ex purus, tempus vel tristique non, maximus eget risus. Maecenas auctor nec massa ut interdum. Duis maximus congue magna et iaculis. 
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-4">
+                    <h5 class="purple">Languages I speak : </h5>
+                    <ul class="listcode">
+                    <li> <i class="fa-brands fa-html5"></i> HTML</li>
+                    <li> <i class="fa-brands fa-css3-alt"></i> CSS</li>
+                    <li> <i class="fa-brands fa-js-square"></i> JAVASCRIPT</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-4">
+                    <h5 class="purple">Dev Tools : </h5>
+                    <ul class="listcode">
+                    <li> <i class="fa-brands fa-bootstrap"></i> BOOTSTRAP</li>
+                    <li> <i class="fa-brands fa-github-alt"></i> GIT HUB</li>
+                    <li> <i class="fa-solid fa-terminal"></i> TERMINAL</li>
+                    </ul> 
+                  </div>
+                  </div>
                         </div>
-                    </div>
-
+              
                     <div class="col-lg-3 col-sm-6 d-sm-flex justify-content-sm-center m-5">
                         <div class="about-avatar">
-                            <img src="images/maya.jpeg" title="" alt="">
+                            <img src="images/ME.png" title="" alt="" id="myImage">
                         </div>
                     </div>
                 </div>
                 
             </div>
         </section>
-        
+        </div>
 
-        <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-danger" id="portfolio">Portfolio</h4>
+        <div class="bg-danger background">
 
-        <section class="section portfolio m-5 d-flex flex-wrap justify-content-center">
 
+        <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light" id="portfolio"> [2] Portfolio</h4>
+
+        <section class="section p-4 portfolio m d-flex flex-wrap justify-content-center">
+          
         <div class="card col-lg-3 col-sm-5 m-2">
-            <img class="card-img" src="images/portfolioimg/1.png" alt="Card image cap">
+          <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day5/miniProject2/index.html?fbclid=IwAR2NLMNT2hT2uCuI7vg2SBI8jh2j8XlWPqTujHRVoqF8BghTJM9k4qY1gkM" onclick="window.open(href)" target=”_blank” >
+            <img class="card-img " src="images/portfolio/drums.png" alt="Card image cap" >
+          </a>
           </div>
           <div class="card col-lg-3 col-sm-5 m-2">
-            <img class="card-img" src="images/portfolioimg/2.png" alt="Card image cap">
+            <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day5/miniProject1/index.html" onclick="window.open(href)" target=”_blank” >
+            <img class="card-img" src="images/portfolio/painting.png" alt="Card image cap">
+            </a>
           </div>
           <div class="card col-lg-3 col-sm-5 m-2">
+            <a href="https://mayapik.github.io/DI_Bootcamp/Prep/MyProject_Mike/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolioimg/3.png" alt="Card image cap">
+            </a>
           </div>
           <div class="card col-lg-3 col-sm-5 m-2">
-            <img class="card-img" src="images/portfolioimg/4.png" alt="Card image cap">
+            <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day2/ExercisesXPNinja/index.html" onclick="window.open(href)" target=”_blank” >
+            <img class="card-img" src="images/portfolio/calender.png" alt="Card image cap">
+            </a>
           </div>
           <div class="card col-lg-3 col-sm-5 m-2">
+            <a href="https://mayapik.github.io/DI_Bootcamp/Prep/MyProject_Mike/index.html" onclick="window.open(href)" target=”_blank” >
             <img class="card-img" src="images/portfolioimg/5.png" alt="Card image cap">
+            </a>
           </div>
           <div class="card col-lg-3 col-sm-5 m-2">
-            <img class="card-img" src="images/portfolioimg/6.png" alt="Card image cap">
+            <a href="https://mayapik.github.io/DI_Bootcamp/week-5/day4/ExercisesXPNinja/index.html" onclick="window.open(href)" target=”_blank” >
+            <img class="card-img" src="images/portfolio/tip.png" alt="Card image cap">
+            </a>
           </div>
         </section>
+        </div>
 
-<section class="section blog m-5" id="blog">
-        <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-danger">Blog</h4>
+<div class="green-background">
+<section class="section blog m-5 "  id="blog">
+        <h4 class="row p-3 pt-5  d-flex align-items-center justify-content-center flex-sm-column flex-lg-row text-light">[3] Blog</h4>
 
 
         <div class="card-group">
-            <div class="card  m-4">
-              <img class="card-img" src="images/blog/blog.jpeg" alt="Card image cap">
+            <div class="card m-4">
+              <img class="card-img">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
             <div class="card m-4">
-              <img class="card-img" src="images/blog/blog1.jpeg" alt="Card image cap">
+              <img class="card-img">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
             <div class="card m-4">
-              <img class="card-img" src="images/blog/blog2.webp" alt="Card image cap">
+              <img class="card-img">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
           </div>
 
         </section>
-
+      </div>
 <div id="contact" class="contact-area section-padding">
 	<div class="container">										
 					
@@ -192,5 +233,6 @@
 
 
 </div>
+<script src="script.js"></script>
   </body>
 </html>
