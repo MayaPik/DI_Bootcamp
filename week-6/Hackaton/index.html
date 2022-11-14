@@ -1,25 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Places Search Box</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3PGx5_AtuORzpdvj1ek2odcsZvY1H29Y&libraries=places,geometry&callback=initMap"></script>
 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
   <body>
-    <form id="findLocation">
-    <input type="text" id="targetLocation" autocomplete="on">
-    <input type="hidden" id="city2" name="city2"/>
-    <input type="hidden" id="cityLat" name="cityLat" />
-    <input type="hidden" id="cityLng" name="cityLng" />
-    <input type="submit" id="submit">
-    </form>
-
-
+    <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+    />
     <div id="map"></div>
 
-    <script src="scripts/script.js"></script>
-    <script src="scripts/googleMapsApi.js"></script>
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3PGx5_AtuORzpdvj1ek2odcsZvY1H29Y&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    <script src="script.js"></script>
+
   </body>
 </html>
+
