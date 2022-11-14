@@ -68,3 +68,4 @@ monthlyEx.forEach((number, i, arr) => {
 console.log(monthlyEx)
 console.log(bankAmount)
 
+

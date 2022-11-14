@@ -51,3 +51,4 @@ let totalScore = 0 ;
 gameInfo.forEach((user, i) => { 
   totalScore += user.score
 }); 
+
