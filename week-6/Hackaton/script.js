@@ -64,9 +64,8 @@ function getInit() {
           scaledSize: new google.maps.Size(25, 25),
          
         };
-
           const infowindow = new google.maps.InfoWindow({
-              content: myForm.innerHTML
+              content: "hello"
           });
           
 
