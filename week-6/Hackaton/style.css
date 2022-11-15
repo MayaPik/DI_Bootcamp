@@ -3,7 +3,7 @@
  * that contains the map. 
  */
  #map {
-  height: 90%;
+  height: 85%;
 }
 
 /* 
@@ -12,9 +12,44 @@
 html,
 body {
   height: 100%;
+  background-color:slateblue;
   margin: 0;
   padding: 0;
 }
+
+#searchTextField {
+  display: flex;
+  margin: auto;
+  height: 40px;
+  width: 200px;
+  margin: 10px auto;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+  font-weight: bolder
+  ;}
+
+  .card {
+    background-color: lightgoldenrodyellow;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+#button1, #button2  {
+  margin: auto;
+  height: 40px;
+  width: 200px;
+  margin: 10px auto;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+  font-weight: bolder
+  ;}
 
 #description {
   font-family: Roboto;
@@ -90,3 +125,53 @@ body {
   width: 345px;
 }
 
+#stories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.popup {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 240px;
+  font-size: larger;
+  background-color: slateblue;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 20%;
+  margin: -130px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+}
