@@ -2,8 +2,13 @@
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
- #map {
+ .map {
   height: 85%;
+}
+
+.mapSmall {
+  height: 60%;
+
 }
 
 /* 
@@ -25,7 +30,9 @@ body {
   margin: 10px auto;
   background-color: lightgoldenrodyellow;
   text-align: center;
-  font-weight: bolder
+  font-weight: bolder;
+  border-radius: 6px;
+
   ;}
 
   .card {
@@ -35,20 +42,16 @@ body {
     padding: 10px;
 
   }
-
-  .buttons {
-    display: flex;
-    flex-direction: row;
-  }
-
-#button1, #button2  {
-  margin: auto;
+#button {
+  display: block;
   height: 40px;
   width: 200px;
   margin: 10px auto;
   background-color: lightgoldenrodyellow;
   text-align: center;
-  font-weight: bolder
+  font-weight: bolder;
+  border-radius: 6px;
+  cursor: pointer;
   ;}
 
 #description {

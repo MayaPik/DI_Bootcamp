@@ -1,29 +1,8 @@
-/*
-function initMap(): void {
-  const map = new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
-      zoom: 8,
-      center: { lat: 40.731, lng: -73.997 },
-    }
-  );
   const geocoder = new google.maps.Geocoder();
-  const infowindow = new google.maps.InfoWindow();
 
-  (document.getElementById("submit") as HTMLElement).addEventListener(
-    "click",
-    () => {
-      geocodeLatLng(geocoder, map, infowindow);
-    }
-  );
-}
-
-function geocodeLatLng(
-  geocoder: google.maps.Geocoder,
-  map: google.maps.Map,
-  infowindow: google.maps.InfoWindow
+function geocodeLatLng( geocoder,map
 ) {
-  const input = (document.getElementById("latlng") as HTMLInputElement).value;
+  const input = location;
   const latlngStr = input.split(",", 2);
   const latlng = {
     lat: parseFloat(latlngStr[0]),
@@ -31,7 +10,7 @@ function geocodeLatLng(
   };
 
   geocoder
-    .geocode({ location: latlng })
+    .geocode({ location })
     .then((response) => {
       if (response.results[0]) {
         map.setZoom(11);
@@ -49,11 +28,3 @@ function geocodeLatLng(
     })
     .catch((e) => window.alert("Geocoder failed due to: " + e));
 }
-
-declare global {
-  interface Window {
-    initMap: () => void;
-  }
-}
-window.initMap = initMap;
-export {};*/

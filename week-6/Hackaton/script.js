@@ -1,6 +1,8 @@
 let markers = []; //The markers
 var infowindow;
 var map;
+const geocoder = new google.maps.Geocoder();
+
   
 function getInit() {
   const map = new google.maps.Map(
@@ -38,6 +40,7 @@ function getInit() {
     }
     
     const bounds = new google.maps.LatLngBounds();
+    
       var popup = document.getElementById("myPopup");
       popup.classList.add("show");
     
@@ -96,7 +99,7 @@ function getInit() {
     box.setAttribute('class', 'card')
     let title = document.createElement('h2')
     marker.position
-    title.innerHTML = new google.maps.LatLng(43,2)
+    title.innerHTML = location;
     let description = document.createElement('h3')
     description.innerHTML = marker.description;
     box.appendChild(title)
@@ -130,28 +133,20 @@ function getInit() {
   });
 
 
-  let button1 = document.getElementById('button1')
-  button1.addEventListener('click', seeStories)
+  let button = document.getElementById('button')
+  button.addEventListener('click', seeStories)
 
-  let button2 = document.getElementById('button2')
-  button2.addEventListener('click', closeStories)
-
-    
   function seeStories() {
     let map = document.getElementById('map');
-    map.style.height = '60%'
-    let stories = document.getElementById('stories')
-    stories.style.display= 'flex'
-
+    map.classList.toggle('mapSmall')
+    if (map.classList.contains('mapSmall')) {
+      button.innerHTML = "Close Stories"
+    } 
+    if (!map.classList.contains('mapSmall')) {
+      button.innerHTML = "Open Stories"
+    }
     
-}
-function closeStories() {
-  let map = document.getElementById('map');
-  map.style.height = '85%'
-  let stories = document.getElementById('stories')
-  stories.style.display= 'none'
-
-  
+    
 }
 
 }
