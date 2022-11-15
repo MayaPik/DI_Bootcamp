@@ -6,24 +6,22 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <input
-      id="pac-input"
+    <form id="form1" onsubmit="getValue()"> 
+      <label>Your Story: </label><input type="text" name="story" value="story"><br>
+      <input type="submit" value="submit"> 
+  </form> 
+
+    <input placeholder="Enter a City Name"
+      id="searchTextField"
       class="controls"
       type="text"
-      placeholder="Search Box"
     />
     <div id="map"></div>
 
-    <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3PGx5_AtuORzpdvj1ek2odcsZvY1H29Y&callback=initAutocomplete&libraries=places&v=weekly"
-      defer
-    ></script>
+  
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3PGx5_AtuORzpdvj1ek2odcsZvY1H29Y&callback=getInit&libraries=places&v=weekly"
+      defer ></script>
     <script src="script.js"></script>
 
   </body>
