@@ -61,12 +61,10 @@ function getInit() {
           //size: new google.maps.Size(71, 71),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25),
-         
+          scaledSize: new google.maps.Size(30, 30),
+
         };
-          const infowindow = new google.maps.InfoWindow({
-              content: "hello"
-          });
+         
           
 
         // Create a marker for each place.
@@ -77,28 +75,36 @@ function getInit() {
             title: place.name,
             draggable: true,
             position: location,
+            description: " ",
           })
         );
         ;
-   
+
+        const infoWindow = new google.maps.InfoWindow();
+
+
+
       markers.forEach((marker) => {
-        marker.addListener("click", () => {      
-            infowindow.open({
-              anchor: marker,
-              map,
-            });
-          });
+        
+        marker.addListener("click", () => {
+          if (marker.description == 0 ) {
+          marker.description = prompt('Write here your story/ Experience!',)
+          } 
+          infoWindow.close();
+          infoWindow.open(marker.getMap(), marker);
+          infoWindow.setContent(marker.description);
+        });
         })
         
         
-        
+        }
 
     /* Clear out the old markers.
     markers.forEach((marker) => {
       marker.setMap(null);
     });
     markers = [];*/
-      }
+
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -113,5 +119,19 @@ function getInit() {
 
 }
 
-window.getInit = getInit;
+let button = document.getElementById('button')
+button.addEventListener('click', seeStories)
 
+function seeStories() {
+  for (i=0 ; i < markers.length ; i++) {
+    let box = document.createElement('div')
+    let title = document.createElement('h1')
+    title.innerHTML = markers[i].title;
+    let description = document.createElement('h3')
+    description.innerHTML = markers[i].description;
+    box.appendChild(title)
+    box.appendChild(description)
+    document.body.appendChild(box)
+}
+}
+window.getInit = getInit;
