@@ -99,7 +99,6 @@ function getInit() {
         marker.addListener("click", () => {
           if (marker.description == 0 ) {
             popup.classList.remove("show");
-
           marker.description = prompt('Write here your story/ Experience!',)
           } 
 
@@ -114,18 +113,50 @@ function getInit() {
         let description = document.createElement('h3')
         description.innerHTML = marker.description;
         let locationText = document.createElement('h5')
-        locationText.innerHTML = location
+        locationText.innerHTML = (marker.getPosition());
+
+        geocoder
+        .geocode({ location: location })
+        .then((response) => {
+          if (response.results[0]) {
+            title.innerHTML = response.results[6].formatted_address;
+          }
+          })
+      
+        
         box.appendChild(title)
         box.appendChild(description)
         box.appendChild(locationText)
-
         stories.appendChild(box)
 
-        google.maps.event.addListener(marker, 'dragend', function(ev){
+        box.addEventListener('click', referToPlace)
+
+        function referToPlace() {
+          let input = locationText.innerHTML.slice(1, -1); 
+          const latlngStr = input.split(",", 2);
+        
+          // (-33.91249740186251, 151.02463227449644)
+          map.setCenter({lat: parseFloat(latlngStr[0]), lng:  parseFloat(latlngStr[1])});
+
+        }
+
+        google.maps.event.addListener(marker, 'dragend', function(ev) {
           location = (marker.getPosition());
           locationText.innerHTML = (marker.getPosition());
-          
+          geocoder
+            .geocode({ location: location })
+            .then((response) => {
+              if (response.results[4]) {
+                map.setZoom(11);
+                title.innerHTML = response.results[6].formatted_address;
+              } else {
+                console.log("No results found");
+              }
+            })
+            .catch((e) => console.log("Geocoder failed due to: " + e));
         });
+
+
 
           infoWindow.close();
           infoWindow.open(marker.getMap(), marker);
@@ -134,7 +165,7 @@ function getInit() {
       });
 
         
-        
+    
         }
 
     /* Clear out the old markers.
