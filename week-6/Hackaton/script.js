@@ -23,8 +23,6 @@ function getInit() {
     arrow.classList.add("show");
   }
 
-  infowindow = new google.maps.InfoWindow();
-  
 
   var options = {
     types: ['(cities)'],
@@ -124,7 +122,7 @@ function getInit() {
         stories.appendChild(box)
 
         google.maps.event.addListener(marker, 'dragend', function(ev){
-          marker.position (marker.getPosition());
+          location = (marker.getPosition());
           locationText.innerHTML = (marker.getPosition());
           
         });
