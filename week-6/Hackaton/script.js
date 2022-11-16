@@ -1,7 +1,7 @@
 let markers = []; //The markers
 var infowindow;
 var map;
-const geocoder = new google.maps.Geocoder();
+
 
   
 function getInit() {
@@ -13,8 +13,18 @@ function getInit() {
       mapTypeId: "roadmap",
     }
   );
-  infowindow = new google.maps.InfoWindow();
+  let explanation = document.getElementById("explain");
+  let arrow = document.getElementById("arrowid");
+  explanation.classList.add("show");
 
+  setInterval(arrowing,1000)
+
+  function arrowing() {
+    arrow.classList.add("show");
+  }
+
+  infowindow = new google.maps.InfoWindow();
+  
 
   var options = {
     types: ['(cities)'],
@@ -40,17 +50,19 @@ function getInit() {
     }
     
     const bounds = new google.maps.LatLngBounds();
-    
       var popup = document.getElementById("myPopup");
       popup.classList.add("show");
+      explanation.classList.remove("show");
+      arrow.style.display = 'none';
+
+
     
 
     places.forEach((place) => {
 
       google.maps.event.addListener(map, "dblclick", (event) => {
         addMarker(event.latLng, map);
-        popup.innerHTML = "Click on the Marker to add your story"
-
+        popup.innerHTML = "Now click on the Marker to add your story"
       });
       
 
@@ -80,6 +92,7 @@ function getInit() {
         ;
 
         const infoWindow = new google.maps.InfoWindow();
+        const geocoder = new google.maps.Geocoder();
 
 
 
@@ -92,24 +105,36 @@ function getInit() {
           marker.description = prompt('Write here your story/ Experience!',)
           } 
 
-  let stories = document.getElementById('stories')
+
+        let stories = document.getElementById('stories')
 
 
-    let box = document.createElement('div')
-    box.setAttribute('class', 'card')
-    let title = document.createElement('h2')
-    marker.position
-    title.innerHTML = location;
-    let description = document.createElement('h3')
-    description.innerHTML = marker.description;
-    box.appendChild(title)
-    box.appendChild(description)
-    stories.appendChild(box)
+        let box = document.createElement('div')
+        box.setAttribute('class', 'card')
+        let title = document.createElement('h2')
+        title.innerHTML = place.name;
+        let description = document.createElement('h3')
+        description.innerHTML = marker.description;
+        let locationText = document.createElement('h5')
+        locationText.innerHTML = location
+        box.appendChild(title)
+        box.appendChild(description)
+        box.appendChild(locationText)
+
+        stories.appendChild(box)
+
+        google.maps.event.addListener(marker, 'dragend', function(ev){
+          marker.position (marker.getPosition());
+          locationText.innerHTML = (marker.getPosition());
+          
+        });
+
           infoWindow.close();
           infoWindow.open(marker.getMap(), marker);
           infoWindow.setContent(marker.description);
-        });
         })
+      });
+
         
         
         }
