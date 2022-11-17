@@ -84,7 +84,7 @@ function getInit() {
             title: place.name,
             draggable: true,
             position: location,
-            description: " ",
+            description: "",
           })
         );
         ;
@@ -94,25 +94,25 @@ function getInit() {
 
 
 
-      markers.forEach((marker) => {
-        
-        marker.addListener("click", () => {
-          if (marker.description == 0 ) {
-          marker.description = prompt('Write here your story here',)
-          } 
-
-          let button = document.getElementById('button')
-          button.addEventListener('click', seeStories)
+        let button = document.getElementById('button')
+        button.addEventListener('click', seeStories)
+        popup.innerHTML = "You can drag the marker to change the location"        
+        setTimeout(function(){popup.classList.remove("show"); }, 2000);
         
           if (markers.length > 0) {
             button.classList.add("light")
            }
 
-        popup.innerHTML = "You can drag the marker to change the location"        
-        setTimeout(function(){popup.classList.remove("show"); }, 2000);
-
+      markers.forEach((marker) => {
+        
+        marker.addListener("click", () => {
+          if (marker.description.length == 0 ) {
+          marker.description = prompt('Write here your story here',)
+            if (marker.description == "") {
+              marker.description = "No Story"
+            }
+        
         let stories = document.getElementById('stories')
-
         let box = document.createElement('div')
         box.setAttribute('class', 'card')
         let title = document.createElement('h2')
@@ -121,7 +121,7 @@ function getInit() {
         description.innerHTML = marker.description;
         let locationText = document.createElement('h5')
         locationText.innerHTML = (marker.getPosition());
-
+    
         geocoder
         .geocode({ location: location })
         .then((response) => {
@@ -129,7 +129,6 @@ function getInit() {
             title.innerHTML = response.results[6].formatted_address;
           }
           })
-      
         
         box.appendChild(title)
         box.appendChild(description)
@@ -165,7 +164,7 @@ function getInit() {
         });
 
 
-
+      }
           infoWindow.close();
           infoWindow.open(marker.getMap(), marker);
           infoWindow.setContent(marker.description);
@@ -175,13 +174,6 @@ function getInit() {
         
     
         }
-
-    /* Clear out the old markers.
-    markers.forEach((marker) => {
-      marker.setMap(null);
-    });
-    markers = [];*/
-
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
