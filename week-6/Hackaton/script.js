@@ -67,8 +67,8 @@ function getInit() {
 
       function addMarker(location, map) {
         const icon = {
-          url: place.icon,
-          //size: new google.maps.Size(71, 71),
+          //url: place.icon,
+          size: new google.maps.Size(71, 71),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
           scaledSize: new google.maps.Size(30, 30),
@@ -98,13 +98,20 @@ function getInit() {
         
         marker.addListener("click", () => {
           if (marker.description == 0 ) {
-            popup.classList.remove("show");
-          marker.description = prompt('Write here your story/ Experience!',)
+          marker.description = prompt('Write here your story here',)
           } 
 
+          let button = document.getElementById('button')
+          button.addEventListener('click', seeStories)
+        
+          if (markers.length > 0) {
+            button.classList.add("light")
+           }
+
+        popup.innerHTML = "You can drag the marker to change the location"        
+        setTimeout(function(){popup.classList.remove("show"); }, 2000);
 
         let stories = document.getElementById('stories')
-
 
         let box = document.createElement('div')
         box.setAttribute('class', 'card')
@@ -137,6 +144,7 @@ function getInit() {
         
           // (-33.91249740186251, 151.02463227449644)
           map.setCenter({lat: parseFloat(latlngStr[0]), lng:  parseFloat(latlngStr[1])});
+          map.setZoom(13)
 
         }
 
@@ -187,10 +195,9 @@ function getInit() {
   });
 
 
-  let button = document.getElementById('button')
-  button.addEventListener('click', seeStories)
 
   function seeStories() {
+    button.classList.remove('light')
     let map = document.getElementById('map');
     map.classList.toggle('mapSmall')
     if (map.classList.contains('mapSmall')) {
