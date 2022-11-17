@@ -7,19 +7,30 @@
   </head>
   <body>
     <section id="quotes"></section>
-    <button id="generate">Generate Quote</button>
+    <button id="generate">Generate Quote</button> <br> <br>
+    <button id="charactersWithSpaces">number of character inside each quote</button> <h1 id="spacesResult"></h1>
+    <button id="charactersNoSpaces">number of character inside each quote without spaces</button> <h1 id="noSpacesResult"></h1>
+    <button id="numberOfWords">number of character inside each quote without spaces</button> <h1 id="wordsResult"></h1>
+    <button id="like">Like</button>  <br> <span>Likes Number:</span> <span id="likesResult">0</span>
 
-
-    <button id="charactersWithSpaces" onclick="withSpaces()">number of character inside each quote</button>
-    <button id="charactersNoSpaces" onclick="withoutSpacs()">number of character inside each quote without spaces</button>
-    <button id="numberOfWords" onclick="numOfWords()">number of character inside each quote without spaces</button>
-
-
+<br><br>
     <form id="addQuote">
-      <input placeholder="Quote" id="quote" value="" type="text">
-      <input placeholder="Author" id="author" value="" type="text">
-      <button type="submit" id="submit"></button>
+      <h2>Add a new quote!</h2>
+      <input placeholder="Quote" id="quote" value="" type="text"><br><br>
+      <input placeholder="Author" id="author" value="" type="text"><br><br>
+      <button type="submit" id="submit" >submit</button>
     </form>
+
+    <br>
+    <form id="search">
+      <h2>Find all the quotes by an author</h2>
+
+      <input type="text" placeholder="Name of author" value="" id="name">
+      <button type="submit" id="submitName" >submit</button>
+    </form> 
+    <div id="quotesbyauthor"></div><br>
+    <button type="button" id="previous">Previous Quote</button>
+    <button type="button" id="next">Next Quote</button>
 
   <script src="script.js">
 
