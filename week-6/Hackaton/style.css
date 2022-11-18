@@ -3,7 +3,7 @@
  * that contains the map. 
  */
  .map {
-  height: 85%;
+  height: 80%;
 }
 
 .mapSmall {
@@ -183,7 +183,21 @@ body {
   position: absolute;
   z-index: 1;
   right: 100px;
-  top: 500px
+  top: 300px
+}
+.popup .drag {
+  visibility: hidden;
+  padding: 13px;
+  width: 200px;
+  font-size: medium;
+  background-color: slateblue;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  right: 100px;
+  top: 300px
 }
 
 .popup .arrow {

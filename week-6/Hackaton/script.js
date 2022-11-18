@@ -60,11 +60,14 @@ function getInit() {
 
       google.maps.event.addListener(map, "dblclick", (event) => {
         addMarker(event.latLng, map);
+        map.setOptions({disableDoubleClickZoom: true });
         popup.innerHTML = "Now click on the Marker to add your story"
       });
       
 
-
+      let dragPopup = document.getElementById('dragPopup')
+      dragPopup.classList.add("show");
+let i=0;
       function addMarker(location, map) {
         const icon = {
           //url: place.icon,
@@ -80,28 +83,34 @@ function getInit() {
         markers.push(
           new google.maps.Marker({
             map,
-            icon,
+            //icon,
             title: place.name,
             draggable: true,
             position: location,
             description: "",
+            id: i,
           })
         );
         ;
 
         const infoWindow = new google.maps.InfoWindow();
         const geocoder = new google.maps.Geocoder();
-
+        i++
 
 
         let button = document.getElementById('button')
         button.addEventListener('click', seeStories)
-        popup.innerHTML = "You can drag the marker to change the location"        
-        setTimeout(function(){popup.classList.remove("show"); }, 2000);
-        
-          if (markers.length > 0) {
-            button.classList.add("light")
-           }
+       
+
+           
+        if (markers.length > 0) {
+          button.classList.add("light")
+         }
+
+         if (markers.length > 2 ) {
+          dragPopup.classList.remove("show");
+          popup.classList.remove('show')
+         }
 
       markers.forEach((marker) => {
         
@@ -111,17 +120,34 @@ function getInit() {
             if (marker.description == "") {
               marker.description = "No Story"
             }
-        
+         
+           
+  
         let stories = document.getElementById('stories')
         let box = document.createElement('div')
         box.setAttribute('class', 'card')
+        box.setAttribute('id', marker.id)
+
         let title = document.createElement('h2')
         title.innerHTML = place.name;
         let description = document.createElement('h3')
         description.innerHTML = marker.description;
         let locationText = document.createElement('h5')
         locationText.innerHTML = (marker.getPosition());
-    
+        let deleting = document.createElement('button')
+        deleting.innerHTML = "Delete Location";
+
+
+        deleting.addEventListener('click', deleteEvent)
+
+        function deleteEvent() {
+          let deletedCard = document.getElementById(marker.id)
+          stories.removeChild(deletedCard)
+          marker.setMap(null);
+          markers.splice(marker.id, 1);
+          map.setZoom(13)
+
+        }
         geocoder
         .geocode({ location: location })
         .then((response) => {
@@ -132,7 +158,7 @@ function getInit() {
         
         box.appendChild(title)
         box.appendChild(description)
-        box.appendChild(locationText)
+        box.appendChild(deleting)
         stories.appendChild(box)
 
         box.addEventListener('click', referToPlace)
