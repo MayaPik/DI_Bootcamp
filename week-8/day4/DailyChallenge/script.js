@@ -1,35 +1,34 @@
-let client = "John";
+//In this exercise, you will use object oriented programming concepts to define and use a custom object in JavaScript.
 
-const groceries = {
-    fruits : ["pear", "apple", "banana"],
-    vegetables: ["tomatoes", "cucumber", "salad"],
-    totalPrice : "20$",
-    other : {
-        payed : true,
-        meansOfPayment : ["cash", "creditCard"]
+//Create a class named Video. The class should be constructed with the following parameters:
+
+//Create a method called watch() which displays a string as follows:
+//“uploader parameter watched all time parameter of title parameter!”
+class Video {
+    constructor(title, uploader,time) {
+        this.title = title,
+        this.uploader = uploader,
+        this.time = time
+    }
+    watch() {
+        return `${this.uploader} watched all ${this.time} of ${this.title}`
     }
 }
 
-//Create an arrow function named displayGroceries, that console.logs the 3 fruits from the groceries object. Use the forEach method.
+//Instantiate a new Video instance and call the watch() method.
+    const aVideo1 = new Video("Monkeys jump on people", "koftov", 24);
+    const aVideo2 = new Video("boys sing birthday songs", "empi83", 42);
 
-const displayGroceries = () => groceries.fruits.forEach((fruit) => console.log(fruit));
-displayGroceries()
+      //  Bonus: Use an array to store data for five Video instances (ie. title, uploader, time)
+          // Think of the best data structure to save this information within the array.
+    let storeVideos = []
+    const aVideo3 = new Video("Elephents jump", "coolguy432", 10);
+    const aVideo4 = new Video("monkeys dance", "halokiity1", 35);
+    const aVideo5 = new Video("boys sing birthday songs", "empi83", 42);
+    storeVideos.push(aVideo1,aVideo2,aVideo3,aVideo4,aVideo5)
 
-//Create another arrow function named cloneGroceries
-//In the function, create a variable named user that is a copy of the client variable. 
-//(Tip : make the user variable equal to the client variable)
+    // Bonus: Loop through the array to instantiate those instances.
 
-//In the function, create a variable named shopping that is equal to the groceries variable.
-//Change the value of the totalPrice key to 35$. Will we also see this modification in the shopping object ? Why ?
-//Change the value of the payed key to false. Will we also see this modification in the shopping object ? Why ?
-
-const cloneGroceries = () => { 
-    let user = client; 
-    client = 'bety';
-    console.log(user); //not changed- reference by value
-    let shopping = groceries;
-    groceries.totalPrice = '35$'
-    groceries.other.payed = false;
-    console.log(shopping) //changed- because it is begin refer to the same place
-}
-cloneGroceries()
+    for (let i = 0; i < storeVideos.length; i++) {
+      console.log(storeVideos[i].watch());
+    }
