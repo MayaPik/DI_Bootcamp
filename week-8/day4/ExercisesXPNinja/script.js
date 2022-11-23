@@ -1,12 +1,16 @@
-const mergeWords = (final) => (str2) => {
-  if (str2 === undefined) {
-    return final
-  } 
-  else {
-      return mergeWords(final = final + " " + str2)
+class Bird {
+  constructor() {
+    console.log("I'm a bird. 🦢");
   }
 }
 
-mergeWords('Hello')()
+class Flamingo extends Bird {
+  constructor() {
+    console.log("I'm pink. 🌸"); //first will console this log
+    super(); // this calls the Bird behavior- so it will console the bird log
+  }
+}
 
-mergeWords('There')('is')('no')('spoon.')();
+const pet = new Flamingo();
+//"I'm pink. 🌸"
+//"I'm a bird. 🦢"

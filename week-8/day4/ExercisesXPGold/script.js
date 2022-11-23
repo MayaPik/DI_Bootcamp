@@ -1,47 +1,51 @@
-let landscapeArrow = () => {
-    let result = "";
-    let flat = (x) => {
-      for (let count = 0; count < x; count++) {
-        result = result + "_";
-      }
-    };
-    let mountain = (x) => {
-      result = result + "/";
-      for (let counter = 0; counter < x; counter++) {
-        result = result + "'";
-      }
-      result = result + "\\";
-    };
-
-    flat(4);
-    mountain(4);
-    flat(4);
-    return result;
-  };
-  landscapeArrow();
+//Exercise 1 : Print Full Name
+function printFullName(studentObj) {
+  let objValues = Object.values(studentObj).toString().replace(",", " ")
+  return `Your full name is ${objValues}`
+}
 
 
+printFullName({first: 'Elie', last:'Schoppik'}) 
 
-//Exercise 2 : Closure
-const addTo = x => y => x + y; 
-const addToTen = addTo(10); // 10 + y
-addToTen(3); //10+3 = 13
+// 'Your full name is Elie Schoppik`
+//Destructure this object DIRECTLY from the parameters (ie. Look at the Advanced Object lesson - Part II :
+//Object destructuring used as an assignment to a function)
 
-//Exercise 3 : Currying
 
-const curriedSum = (a) => (b) => a + b 
-curriedSum(30)(1) // 31
+//Exercise 2 : Keys And Values
 
-//Exercise 4 : Currying
-const curriedSum2 = (a) => (b) => a + b 
-const add5 = curriedSum2(5) //5+ b
-add5(12) //5+12 =17
+function keysAndValues(obj) {
+  let newArr = []
+  let objKeys = Object.keys(obj)
+  let objValues = Object.values(obj)
+  newArr.push(objKeys,objValues)
+  return newArr
+}
+keysAndValues({ a: 1, b: 2, c: 3 })
+//[["a", "b", "c"], [1, 2, 3]]
 
-//Exercise 5 : Composing
-const compose = (f, g) => (a) => f(g(a)); 
-const add1 = (num) => num + 1;
-const add5o = (num) => num + 5;
-compose(add1, add5o)(10)
-// add1(add5o(10))
-//add1(15)
-//16
+keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" })
+// [["a", "b", "c"], ["Apple", "Microsoft", "Google"]]
+
+keysAndValues({ key1: true, key2: false, key3: undefined })
+// [["key1", "key2", "key3"], [true, false, undefined]]
+
+//Exercise 3 : Counter Class
+class Counter {
+  constructor() {
+    this.count = 0;
+  }
+
+  increment() {
+    this.count++;
+  }
+}
+
+const counterOne = new Counter();
+counterOne.increment();
+counterOne.increment(); //count = 2
+
+const counterTwo = counterOne;
+counterTwo.increment(); //count = 3
+
+console.log(counterOne.count); //3

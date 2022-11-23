@@ -62,3 +62,70 @@ class Person {
 const member = new Person('John');
 console.log(typeof member);
 // object - person {name: John}
+
+
+//🌟 Exercise 5 : Dog Class
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+};
+//Analyze the options below. Which constructor will successfully extend the Dog class?
+
+  // 2
+class Labrador extends Dog {
+  constructor(name, size) {
+    super(name);
+    this.size = size;
+  }
+};
+
+
+//🌟 Exercise 6 : Challenges
+//Evaluate these (ie True or False)
+
+[2] === [2] //flase => [2] != [2]
+//{} === {} //flase => {} !== {} 
+
+const object1 = { number: 5 }; 
+const object2 = object1; 
+const object3 = object2; 
+const object4 = { number: 5};
+
+object1.number = 4;
+console.log(object2.number) //{ number: 4 }
+console.log(object3.number) //{ number: 4 }
+console.log(object4.number) //{ number: 5 }
+
+//Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin ect …
+
+class Animal {
+  constructor(name,type,color) {
+    this.name = name,
+    this.type = type,
+    this.color = color
+  }
+}
+
+//Create a class Mamal that extends from the Animal class. Inside the class, add a method called sound().
+//This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) 
+//as well as the sound it makes.
+
+class Mamal extends Animal {
+  constructor(name, type,color) {
+    super(name,type,color);
+  }
+
+  soundAnimal(sound) {
+    return  `This is a ${this.type} named ${this.name} color ${this.color} and does ${sound}`
+  
+  }
+}
+
+//Create a farmerCow object that is an instance of the class Mamal. 
+//The object accepts a name, a type and a color and calls the sound method that “moos” her information.
+//For example: Moooo I'm a cow, named Lily and I'm brown and white
+
+let farmerCow = new Mamal("Lily", "Cow", "White")
+
+console.log(farmerCow.soundAnimal('Muuu'));
