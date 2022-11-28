@@ -1,0 +1,16 @@
+body {
+    background-image: url(pattern.png);
+    background-color: blueviolet;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.font {
+    font-family: 'SEGA LOGO FONT', sans-serif;
+
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   
+  </head>
+  <body>
+    <form id="myform" method="GET" action="index.html">
+      <label>Name:</label><br>
+      <input type="text" name="name" placeholder="John"><br>
+      <label>Comments:</label><br>
+      <textarea name="comment" placeholder="Hello this is a comment" style="height:100px"></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+    <!--
+      file:///Users/mayapik/Documents/Codes/DI_Bootcamp/week-9/day2/ExercisesXP/index.html?name=Emma+Goldman&comment=HELLO
+
+      Query String Parameters
+      name: 
+        Emma Goldman
+      comment: 
+        HELLO
+
+    -->
+    <form id="myform2" method="POST" action="index.html">
+      <label>Name:</label><br>
+      <input type="text" name="name" placeholder="John"><br>
+      <label>Comments:</label><br>
+      <textarea name="comment" placeholder="Hello this is a comment" style="height:100px"></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+
+    <!--
+      Network -> Playload
+      From Data
+      name: 
+        Emma Goldman
+      comment: 
+        HELLO
+    -->
+  <script src="script.js">
+
+  </script>
+  </body>
+</html>
