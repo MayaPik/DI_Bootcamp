@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   
+    <meta charset="utf-8" />   
   </head>
   <body>
- 
-  <script src="script.js">
+    <button onclick=showCountries()>Show Countries</button>
+    <div id="feed"></div>
+    <button onclick=showEmails()>Show Emails</button>
+    <div id="feedEmails"></div>
 
+  <script>
+    
+  function showCountries() {
+    let xhr = new XMLHttpRequest()
+    xhr.responseType = 'json';
+
+    xhr.open('GET', 'https://restcountries.com/v3.1/all', true)
+
+    xhr.onload = function() {
+      if (xhr.status === 200 ) {
+        let countries = this.response
+        countries.forEach(country => {
+          const countryCard = document.createElement('div');
+          countryCard.innerHTML = country.name.common + " " + country.flag;
+          document.getElementById('feed').appendChild(countryCard)
+        
+      }); 
+      }
+    }
+          xhr.onprogress = function(event) { 
+          console.log(`Received ${event.loaded} of ${event.total}`);
+          };
+
+          
+    xhr.send();
+  }
+
+  function showEmails() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://zivuch.github.io/emails.xml')
+    xhr.responseType = 'document';
+
+
+    xhr.onload = function() {
+      if (xhr.status != 200 ) {
+        alert(`Error: ${xhr.status}: ${xhr.statusText}`);
+      }
+      else {
+        let emails = this.response
+        const cd = [...emails.getElementsByTagName("email")];
+        cd.forEach((one, i) => {
+          const countryCard = document.createElement('div');
+          const send = document.createElement('h5');
+          const heading =document.createElement('h4');
+          const body =document.createElement('p');
+          send.innerHTML = `from ${(cd[i].getElementsByTagName("from")[0].childNodes[0].nodeValue)} to ${(cd[i].getElementsByTagName("to")[0].childNodes[0].nodeValue)}`;
+          heading.innerHTML = `${(cd[i].getElementsByTagName("heading")[0].childNodes[0].nodeValue)}`
+          body.innerHTML = `${(cd[i].getElementsByTagName("body")[0].childNodes[0].nodeValue)}`
+          countryCard.appendChild(send)
+          countryCard.appendChild(heading)
+          countryCard.appendChild(body)
+          document.getElementById('feedEmails').appendChild(countryCard)
+        
+         });
+          
+            }
+    }
+   
+    xhr.onprogress = function(event) {
+        if (event.lengthComputable) {
+          console.log(`Received ${event.loaded} of ${event.total} bytes`);
+        } else {
+          console.log(`Received ${event.loaded} bytes`); // no Content-Length
+        }
+      }
+
+    xhr.send();
+
+
+  }
   </script>
   </body>
 </html>

@@ -6,5 +6,4 @@ function printOut(e) {
   formData = new FormData(e.target);
   let jsonData = JSON.stringify(Object.fromEntries(formData))
   document.body.innerHTML = jsonData
-
 }

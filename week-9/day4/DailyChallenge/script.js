@@ -1,34 +1,50 @@
-//In this exercise, you will use object oriented programming concepts to define and use a custom object in JavaScript.
+let form = document.forms[0];
+let deleteButton = document.getElementById('delete');
+let text = document.getElementById('text');
+let space = document.getElementById('space')
+form.addEventListener('submit', sendWord)
 
-//Create a class named Video. The class should be constructed with the following parameters:
+function sendWord(e) {
+  e.preventDefault()
+  let word = text.value
+  let xhr = new XMLHttpRequest();
 
-//Create a method called watch() which displays a string as follows:
-//“uploader parameter watched all time parameter of title parameter!”
-class Video {
-    constructor(title, uploader,time) {
-        this.title = title,
-        this.uploader = uploader,
-        this.time = time
+  xhr.open('GET', `https://api.giphy.com/v1/gifs/search?q=${word}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`, true);
+
+  xhr.onload = function(){
+    if(xhr.status != 200){
+      console.log(`Error: ${xhr.status}: ${xhr.statusText}`);
     }
-    watch() {
-        return `${this.uploader} watched all ${this.time} of ${this.title}`
+    else{
+
+       let gifs = JSON.parse(xhr.response).data
+       console.log(gifs)
+
+          let imageDiv = document.createElement('div');
+          imageDiv.style.display = 'flex'
+          imageDiv.style.flexDirection = 'column'
+         
+
+          let imageGif = document.createElement('img');
+          imageGif.src = gifs[Math.floor((Math.random()*50))].images.original.url;
+            
+          imageDiv.style.width = '100px';
+          imageGif.style.height = '100px';
+          imageDiv.style.margin = '10px'
+          let imageDelete = document.createElement('button');
+          imageDelete.innerText = "Delete Gif"
+          imageDelete.addEventListener('click', function(){ space.removeChild(imageDiv) })
+          imageDiv.appendChild(imageGif)
+          imageDiv.appendChild(imageDelete)
+          space.appendChild(imageDiv)
+
+          
+       deleteButton.addEventListener('click', deleteGifs)
+        function deleteGifs() {
+        space.innerHTML = ""
+        text.value = ""
+        }  
     }
+  }
+  xhr.send()
 }
-
-//Instantiate a new Video instance and call the watch() method.
-    const aVideo1 = new Video("Monkeys jump on people", "koftov", 24);
-    const aVideo2 = new Video("boys sing birthday songs", "empi83", 42);
-
-      //  Bonus: Use an array to store data for five Video instances (ie. title, uploader, time)
-          // Think of the best data structure to save this information within the array.
-    let storeVideos = []
-    const aVideo3 = new Video("Elephents jump", "coolguy432", 10);
-    const aVideo4 = new Video("monkeys dance", "halokiity1", 35);
-    const aVideo5 = new Video("boys sing birthday songs", "empi83", 42);
-    storeVideos.push(aVideo1,aVideo2,aVideo3,aVideo4,aVideo5)
-
-    // Bonus: Loop through the array to instantiate those instances.
-
-    for (let i = 0; i < storeVideos.length; i++) {
-      console.log(storeVideos[i].watch());
-    }
