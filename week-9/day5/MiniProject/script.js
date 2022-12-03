@@ -1,132 +1,123 @@
-const robots = [
-  {
-    id: 1,
-    name: 'Leanne Graham',
-    username: 'Bret',
-    email: 'Sincere@april.biz',
-    image: 'https://robohash.org/1?200x200'
-  },
-  {
-    id: 2,
-    name: 'Ervin Howell',
-    username: 'Antonette',
-    email: 'Shanna@melissa.tv',
-    image: 'https://robohash.org/2?200x200'
-  },
-  {
-    id: 3,
-    name: 'Clementine Bauch',
-    username: 'Samantha',
-    email: 'Nathan@yesenia.net',
-    image: 'https://robohash.org/3?200x200'
-  },
-  {
-    id: 4,
-    name: 'Patricia Lebsack',
-    username: 'Karianne',
-    email: 'Julianne.OConner@kory.org',
-    image: 'https://robohash.org/4?200x200'
-  },
-  {
-    id: 5,
-    name: 'Chelsey Dietrich',
-    username: 'Kamren',
-    email: 'Lucio_Hettinger@annie.ca',
-    image: 'https://robohash.org/5?200x200'
-  },
-  {
-    id: 6,
-    name: 'Mrs. Dennis Schulist',
-    username: 'Leopoldo_Corkery',
-    email: 'Karley_Dach@jasper.info',
-    image: 'https://robohash.org/6?200x200'
-  },
-  {
-    id: 7,
-    name: 'Kurtis Weissnat',
-    username: 'Elwyn.Skiles',
-    email: 'Telly.Hoeger@billy.biz',
-    image: 'https://robohash.org/7?200x200'
-  },
-  {
-    id: 8,
-    name: 'Nicholas Runolfsdottir V',
-    username: 'Maxime_Nienow',
-    email: 'Sherwood@rosamond.me',
-    image: 'https://robohash.org/8?200x200'
-  },
-  {
-    id: 9,
-    name: 'Glenna Reichert',
-    username: 'Delphine',
-    email: 'Chaim_McDermott@dana.io',
-    image:'https://robohash.org/9?200x200'
-  },
-  {
-    id: 10,
-    name: 'Clementina DuBuque',
-    username: 'Moriah.Stanton',
-    email: 'Rey.Padberg@karina.biz',
-    image:'https://robohash.org/10?200x200'
+let cities = [];
+let form = document.forms[0];
+let place = document.getElementById('place');
+let space = document.getElementById('space');
+changeF = document.getElementById('toF');
+changeC = document.getElementById('toC');
+
+navigator.geolocation.getCurrentPosition(getLatLon); //to get the card of your location
+function getLatLon(position) {
+let xhr = new XMLHttpRequest();
+xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=6bc236fa8bd5e7e03f83fd8cea3eac74`, true);
+
+xhr.onload = function(){
+  if(xhr.status != 200){
+    console.log(`Error: ${xhr.status}: ${xhr.statusText}`);
   }
-  ];
+  else {
+    let info = JSON.parse(xhr.response)
+    cities.push(info)
+    letInfo(info)
+  }
+}
+    xhr.send()
+}
 
+form.addEventListener('submit', createCard)
+function createCard(e) {
+  e.preventDefault()
+  let location = place.value
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=6bc236fa8bd5e7e03f83fd8cea3eac74`, true);
 
-  let space = document.getElementById('place');
-  let allRobots = []
-
-  class Robot {
-    constructor(id,name,username,email,image) {
-      this.id = id,
-      this.name = name,
-      this.username = username,
-      this.email = email,
-      this.image = image
+  xhr.onload = function(){
+    if(xhr.status != 200){
+      console.log(`Error: ${xhr.status}: ${xhr.statusText}`);
     }
-    createRobotCard() {
-      this.robotCard = document.createElement('div')
-      this.robotCard.className = "card col-lg-3 col-md-4 col-sm-4 m-2";
-
-      this.imageCard = document.createElement('img')
-      this.imageCard.className = "card-img"
-      this.imageCard.src = this.image;
+    else  {
+      let locationInfo = JSON.parse(xhr.response)[0]
+            try {
+              console.log(locationInfo.lat);
+            }
+            catch(err) {
+            alert("Sorry, the searched city could not be found.");
+            place.value = ""
+            }
       
-      this.cardTitle = document.createElement('h3')
-      this.cardTitle.textContent = this.name;
+      let lat = locationInfo.lat;
+      let lon = locationInfo.lon;
+      xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6bc236fa8bd5e7e03f83fd8cea3eac74`, true);
 
-      this.cardSubTitle = document.createElement('h5')
-      this.cardSubTitle.textContent = this.username;
-
-      this.emailTitle = document.createElement('h5')
-      this.emailTitle.textContent = this.email;
-
-      this.robotCard.append(this.imageCard)
-      this.robotCard.append(this.cardTitle)
-      this.robotCard.append(this.cardSubTitle)
-      this.robotCard.append(this.emailTitle)
-
-      space.append(this.robotCard)
-      allRobots.push(this)
-    }
-
-    show(){
-      this.robotCard.classList.remove('hidden')
-    }
-    hide(){
-      this.robotCard.classList.add('hidden')
-
+            xhr.onload = function(){
+              if(xhr.status != 200){
+                console.log(`Error: ${xhr.status}: ${xhr.statusText}`);
+              }
+              else {
+                place.value = ""
+                let info = JSON.parse(xhr.response)
+                cities.push(info)
+                letInfo(info)
+              }
+            }
+            xhr.send()
+        
     }
   }
+  xhr.send()
+}
 
-    robots.forEach(robot => {
-      let makeRobot = new Robot(robot.id, robot.name, robot.username, robot.email, robot.image)
-      makeRobot.createRobotCard()
-    });
+  function letInfo(info) {
+    let weatherDiv = document.createElement('div');
+    weatherDiv.classList.add('card')
 
-  let searchInput = document.getElementById('search')
-  searchInput.addEventListener('input', makeSearch)
+    let weatherName = document.createElement('h2');
+    weatherName.innerHTML = info.name + ", " + info.sys.country
+    let weatherC = document.createElement('h1');
+    let celsius = Math.round(info.main.temp - 273.15);
+    let fahrenheit = convertToF(celsius) +  "°F";
+    weatherC.innerHTML = celsius + "°C";
+    changeF.addEventListener('click', function() {weatherC.innerHTML = fahrenheit })
+    changeC.addEventListener('click', function() {weatherC.innerHTML = celsius + "°C" })
+    let weatherLogo = document.createElement('img');
+    weatherLogo.style.height = '70px'
+    weatherLogo.style.width = '70px'
 
-  function makeSearch(element) {
-    allRobots.forEach(robot => robot.name.toLowerCase().includes(element.target.value.toLowerCase()) ? robot.show() : robot.hide())
+    weatherLogo.src = `http://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png`
+    let weatherDescription = document.createElement('p');
+    weatherDescription.innerHTML= info.weather[0].description;
+    weatherDescription.style.textTransform = "uppercase"
+    let weatherWind = document.createElement('p');
+    weatherWind.innerHTML= "Wind Speed:" + info.wind.speed
+
+    let weatherSun = document.createElement('p');
+    weatherSun.innerHTML= "Sunrise: " + convertTime(info.sys.sunrise) + "&nbsp; &nbsp; Sunset: " +convertTime(info.sys.sunset)
+
+
+    let cardDelete = document.createElement('button');
+    cardDelete.classList.add('cardDelete')
+    cardDelete.innerText = "X"
+    cardDelete.addEventListener('click', function(){space.removeChild(weatherDiv)})
+
+    weatherDiv.appendChild(cardDelete)
+    weatherDiv.appendChild(weatherName)
+    weatherDiv.appendChild(weatherC)
+    weatherDiv.appendChild(weatherLogo)
+    weatherDiv.appendChild(weatherDescription)
+    weatherDiv.appendChild(weatherWind)
+    weatherDiv.appendChild(weatherSun)
+
+    space.appendChild(weatherDiv)
 
   }
+
+  function convertToF(celsius) {
+    let fahrenheit = celsius * 9/5 + 32
+    return fahrenheit;
+  }
+
+  function convertTime(timestamp) {
+    let dateObj = new Date(timestamp * 1000); 
+    let hours = dateObj.getHours().toString().padStart(2,0);
+    let minutes = dateObj.getMinutes().toString().padStart(2,0);
+    return `${hours}:${minutes}`;
+  };

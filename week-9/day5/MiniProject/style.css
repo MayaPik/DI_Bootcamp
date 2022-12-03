@@ -1,16 +1,95 @@
-body {
-    background-image: url(pattern.png);
-    background-color: blueviolet;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.font {
-    font-family: 'SEGA LOGO FONT', sans-serif;
+body {
+    background-color: darkslateblue;
+    font-family: "Lucida Console", "Courier New", monospace;
+    height: 100vh;
+}
+
+#form {
+    background-color: blueviolet;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+input {
+    width: 300px;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-bottom: 3px solid black;
+    color: black;
+    font-size: 16px;
+
+
+}
+.b {
+    margin: 10px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
 
 }
 
-.hidden {
-    display: none;
+#form {
+    display: flex;
+    justify-content: center
+}
+
+#space {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.green {
+    color: greenyellow;
+    margin: 10px;
+}
+
+    .card {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    background-color:rgb(214, 202, 244);
+    align-items: center;
+    margin: 20px;
+    line-height: 2em;
+    padding: 5px;
+    }
+
+.change {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.change button {
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+
+.cardDelete {
+    align-self: end;
+    margin: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
