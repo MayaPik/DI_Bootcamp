@@ -70,8 +70,9 @@ function createCard(e) {
     let weatherDiv = document.createElement('div');
     weatherDiv.classList.add('card')
 
-    let weatherName = document.createElement('h2');
+    let weatherName = document.createElement('h3');
     weatherName.innerHTML = info.name + ", " + info.sys.country
+    weatherName.style.textAlign = 'center'
     let weatherC = document.createElement('h1');
     let celsius = Math.round(info.main.temp - 273.15);
     let fahrenheit = convertToF(celsius) +  "°F";

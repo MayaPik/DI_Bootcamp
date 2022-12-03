@@ -1,15 +1,24 @@
-//Create a function that:
-
-//takes in two strings as two parameters
-//and returns a boolean that indicates whether or not the first string is an anagram of the second string.
-
-function checkAnagram(str1,str2) {
-    let one = [...str1.replace(" ", "").trimStart().trimEnd().toLowerCase()]
-    let two = [...str2.replace(" ", "").trimStart().trimEnd().toLowerCase()]
-    return (one.every(letter => two.includes(letter)))
-
+function formatDate(date){
+    let arr = []
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hours = date.getHours();
+    let minutes= date.getMinutes()
+    let seconds = date.getSeconds()
+    arr.push(year,month,day,hours,minutes,seconds)
+    
+    let modifiedArr = arr.map(function(element){
+        if (element<10) {
+            return "0" + element.toString();
+        } else {
+            return element.toString();
+        }
+    });
+    
+    return modifiedArr.toString().replaceAll(",","")
 }
 
-checkAnagram("Astronomer", "Moon starer")
-checkAnagram("School master" , "The classroom")
-checkAnagram("The Morse Code" ,"Here come dots")
+formatDate(new Date(2020, 6, 4, 8, 0, 0)) //"20200704080000"
+formatDate(new Date(2019, 11, 31, 23, 59, 59)) //"20191231235959"
+formatDate(new Date(2020, 6, 4)) //"20200704000000"
