@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/178.png");
+    font-family: 'Helvetica Neue';
+    color: yellow;
+    text-align: center;
+  }
+  
+
+  
+  .logo {
+  
+    background: url(logo.png) center center no-repeat;
+    width: 400px;
+    height: 300px;
+  
+  
+    margin:  0 auto;
+  }
+  
+  
+  #space{
+  
+    border: 5px solid yellow;
+    border-radius: 15px;
+    background-color: blue;
+    width: 600px;
+    height: 250px;
+    margin: 0 auto;
+    
+  }
+  
+  #find, #previous, #next {
+      margin-top: 20px;
+      border: 3px solid yellow;
+      border-radius: 10px;
+      width: 260px;
+      height: 40px;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+  }
+  
+  #name{
+      color: white;
+      font-size: 30px;
+      
+  }
+  
+  #height, #id, #weight, #type{
+      color: white;
+      /*font-weight: bold;*/
+      font-size: 20px;
+      font-weight: bold;
+
+  }
+  

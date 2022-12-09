@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Helvetica Neue';
+    color: black;
+    text-align: center;
+    background-image: url(307-3076825_green-money-sign-green-money-sign-green-dollar-4261325056);
+    background-repeat: round;
+  }
+  
+  
+  
+  #find, #amount, .select, #switch {
+      margin-top: 20px;
+      border-radius: 10px;
+      width: 260px;
+      height: 40px;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+  }
+  
+
+  h1 {
+    background-color: rgb(46, 169, 46);
+    
+}
+
+#converted {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}

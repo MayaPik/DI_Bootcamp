@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+  
+    background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+  
+    font-family: 'Helvetica Neue';
+  
+    color: yellow;
+    text-align: center;
+  }
+  
+  /*.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+  }*/
+  
+  
+  .logo {
+  
+    background: url("https://i.dlpng.com/static/png/253278_thumb.png") center center no-repeat;
+    width: 400px;
+    height: 300px;
+  
+    /*background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png") center center no-repeat;*/
+  
+   /* background-size: contain;*/
+    /*width: 1000px;
+    height: 300px;*/
+    margin:  0 auto;
+  
+    margin-top: -20px;
+  }
+  
+  
+  #space{
+  
+    border: 3px solid yellow;
+    border-radius: 15px;
+  
+    width: 600px;
+    height: 250px;
+  
+    margin: 0 auto;
+  
+    margin-top: -25px;
+  
+  }
+  
+  
+  #find {
+      margin-top: 20px;
+  
+      border: 3px solid yellow;
+      border-radius: 10px;
+  
+      width: 180px;
+      height: 40px;
+  
+      font-weight: bold;
+      font-size: 20px;
+  
+      cursor: pointer;
+  }
+  
+  
+  button:focus {
+  
+      outline:0;
+  }
+  
+  #name{
+      color: white;
+  
+      font-size: 30px;
+      
+  }
+  
+  #height{
+      color: white;
+      /*font-weight: bold;*/
+  
+      font-size: 20px;
+  }
+  
+  #gender{
+      color: white;
+      /*font-weight: bold;*/
+  
+      font-size: 20px;
+  }
+  
+  #birthYear{
+      color: white;
+      /*font-weight: bold;*/
+  
+      font-size: 20px;
+  }
+  
+  #homeWorld{
+      color: white;
+      /*font-weight: bold;*/
+  
+      font-size: 20px;
+  }
+  
+  
+  p{
+      color: white;
+      font-weight: bold;
+  
+      font-size: 30px;
+  }
+  
+  
+  
