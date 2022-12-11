@@ -1,7 +1,8 @@
 # DI_Bootcamp
 
-## Hello ! I am Maya. I am a student in DI Bootcamp. This repo is dedicated to all of my assignments during the course 
-### So far I have learned HTML, CSS, JavaScript
+## Hello ! I am Maya. I am a full stack development student in DI Bootcamp. This repository is dedicated to all of my assignments during the course 
+### HTML5, CSS3, JavaScript (ES6), Redux, React.js, TypeScript, Node.js, JSON Web Token, SQL, PostgreSQL.
+
 
 [Portfolio](https://mayapik.github.io/DI_Bootcamp/PortfolioProject/index.html)
 
