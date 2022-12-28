@@ -1,20 +1,27 @@
-let arr = getNotesFromLocal();
+let notes = getNotesFromLocal();
 let input = document.getElementById('note')
 let root = document.getElementById('root')
 
+createNotes(notes)
+
+
 function saveNote() {
-    const note = input.value
-    arr.push(note)
-    localStorage.setItem('notes', JSON.stringify(arr))
-    createNotes(arr)
+    const note = input.value;
+    notes.push(note)
+    localStorage.setItem('memo',JSON.stringify(notes))
+    createNotes(notes)
 }
 
 function createNotes(arr) {
-    root.innerHTML = arr.map(note => "<br>" + note)
+    return root.innerHTML = arr.map(note => "<br>" + note)
 }
 
 function getNotesFromLocal() {
-    return JSON.parse(localStorage.getItem('notes'))
+    return JSON.parse(localStorage.getItem('memo')) || []
 }
 
-createNotes(arr)
+function clearNote() {
+    root.innerHTML = ""
+    notes = []
+    localStorage.clear()
+}
