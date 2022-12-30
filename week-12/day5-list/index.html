@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!--<li><a href="list.html">The List</a></li>-->
+    <h3 id="add">Add a new task here:</h3>
+    <form id="form">
+      <label>Title:</label><input type="text" value="" placeholder="Title" id="name" required ><br>
+      <label>Description:</label><input type="text" value="" placeholder="Description" id="description" required><br>
+      <label>Start Date:</label><input type="date" value="" placeholder="Start Date and Time" id="start" title="Start date must be before end date!"><br>
+      <label>End Date:</label><input type="date" value="" placeholder="End Date and Time" id="end" title="Start date must be before end date!"><br>
+
+      <button type="submit" id="submit" >Submit</button>
+    </form>
+    <button id="delete">Delete All</button>
+    <div id="root"></div>
+
+
+  <script src="dist/index.js">
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+#add {
+    text-align: center;
+}
+
+#form {
+    background-color: aqua;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    font-size: larger;
+
+}
+#name, #description{
+    width: 200px;
+}
+
+#submit {
+    font-size: medium
+    ;
+    padding: 10px;
+}
+.box {
+    background-color:moccasin;
+    width: 90vw;
+    height: 80px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#root {
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+
+}
+
+.description {
+    display: none;
+  }
