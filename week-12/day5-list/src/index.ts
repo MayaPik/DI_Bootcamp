@@ -1,6 +1,6 @@
 let startInput = document.getElementById('start') as HTMLFormElement;
-  let endInput = document.getElementById('end') as HTMLFormElement;
-  let submitButton = document.getElementById('submit') as HTMLButtonElement;
+let endInput = document.getElementById('end') as HTMLFormElement;
+let submitButton = document.getElementById('submit') as HTMLButtonElement;
 
   let compare = () => {
     let startValue = (new Date(startInput.value)).getTime();
@@ -52,9 +52,7 @@ class Item {
   }
   
   
-  
   let form = document.getElementById('form') as HTMLFormElement; 
-  
   form.addEventListener('submit', saveData)
   
   function saveData(event: { preventDefault: any; }) {
@@ -62,13 +60,11 @@ class Item {
     let name = (document.getElementById('name') as HTMLFormElement).value ;
     let description = (document.getElementById('description') as HTMLFormElement).value;
     const startValue = startInput.value;
-      var tommrowDate = new Date();
-      tommrowDate.setDate(tommrowDate.getDate() + 1);
+    var tommrowDate = new Date();
+    tommrowDate.setDate(tommrowDate.getDate() + 1);
     const endValue = endInput.value;
     let start = startValue ? new Date(startValue) : new Date();
     let end = endValue ? new Date(endValue) : tommrowDate;
-    //let start = new Date((document.getElementById('start') as HTMLFormElement).value);
-    //let end = new Date((document.getElementById('end') as HTMLFormElement).value);
     list.push(new Item(name, description, start, end, false));
     localStorage.setItem('listItem', JSON.stringify(list))
     createList(list)
@@ -95,7 +91,6 @@ class Item {
   createList(list)
 
   function createList(arr:[]) {
-    let root = document.getElementById('root') as HTMLCanvasElement;
     list.sort((a: Item, b: Item) => {
       if (a.start instanceof Date && b.start instanceof Date) {
         return a.start.getTime() - b.start.getTime();
@@ -126,79 +121,82 @@ class Item {
         daysuntil.style.margin = '30px'        
         if (difference_In_Days < 0) {
         box.style.backgroundColor = 'red'
-
         }
-        box.classList.add('box')
-        box.addEventListener('click', openDescription)
-
-        function openDescription() {
-          if (description.style.display === 'none') {
-            description.style.display = 'block';
-          } else {
-            description.style.display = 'none';
-          }
-          }
-    
-        let isDone = document.createElement('input');
-        isDone.type = 'checkbox';
-        isDone.style.width = '40px'
-        isDone.style.margin = '30px'
-       
-        let deleteTask = document.createElement('button');
-        deleteTask.innerHTML = 'X'
-        deleteTask.addEventListener('click', deleteTheTask)
-        deleteTask.style.width = '30px'
-        deleteTask.style.margin = '30px'
-
-        function deleteTheTask() {
-          var dialog = confirm("Delete " + one.name + "?");
-          if (dialog) {
-            let index = list.indexOf(one)
-            if (index > -1) {
-              list.splice(index, 1);
-              localStorage.setItem('listItem', JSON.stringify(list))
-            }
-            root.removeChild(box)
-
-          }
-          else {
-              console.log('Nothing was deleted')
-          }
         
-        }
+        ///////////////////
 
+                            box.addEventListener('click', openDescription)
 
-        let editTask = document.createElement('button');
-        editTask.innerHTML = 'Edit'
-        editTask.addEventListener('click', editTheTask)
-        editTask.style.width = '70px'
-        editTask.style.margin = '30px'
+                            function openDescription() {
+                              if (description.style.display === 'none') {
+                                description.style.display = 'block';
+                              } else {
+                                description.style.display = 'none';
+                              }
+                              }
+                        
+                            let isDone = document.createElement('input');
+                            isDone.type = 'checkbox';
+                            isDone.style.width = '40px'
+                            isDone.style.margin = '30px'
+                          
+                            let deleteTask = document.createElement('button');
+                            deleteTask.innerHTML = 'X'
+                            deleteTask.addEventListener('click', deleteTheTask)
+                            deleteTask.style.width = '30px'
+                            deleteTask.style.margin = '30px'
 
-        function editTheTask(event: { stopPropagation: () => void; }) {
-          event.stopPropagation();
-          let i = list.indexOf(one)
-          description.style.display === 'none'
-          box.style.opacity = '0.5';
-          (document.getElementById('name') as HTMLFormElement).value = one.name;
-          (document.getElementById('description') as HTMLFormElement).value = one.description;
-          (document.getElementById('start') as HTMLFormElement).value = one.start.toISOString().slice('T',10);
-          (document.getElementById('end') as HTMLFormElement).value = one.start.toISOString().slice('T',10);
-          let btn = document.getElementById('submit') as HTMLFormElement;
-          btn.textContent = 'Save';
-          btn.setAttribute('onclick', 'save(' + i + ')');
-          }
+                            function deleteTheTask() {
+                              var dialog = confirm("Delete " + one.name + "?");
+                              if (dialog) {
+                                let index = list.indexOf(one)
+                                if (index > -1) {
+                                  list.splice(index, 1);
+                                  localStorage.setItem('listItem', JSON.stringify(list))
+                                }
+                                root.removeChild(box)
 
-        isDone.addEventListener('change', () => {
-          description.style.display = 'none';
-          if (isDone.checked) {
-            one.isCompleted = true;
-            box.style.backgroundColor = 'green'
-          } else {
-            one.isCompleted = false;
-            box.style.backgroundColor = 'red'
+                              }
+                              else {
+                                  console.log('Nothing was deleted')
+                              }
+                            
+                            }
 
-          }
-        });
+                            let editTask = document.createElement('button');
+                            editTask.innerHTML = 'Edit'
+                            editTask.addEventListener('click', editTheTask)
+                            editTask.style.width = '70px'
+                            editTask.style.margin = '30px'
+
+                            function editTheTask(event: { stopPropagation: () => void; }) {
+                              event.stopPropagation();
+                              let i = list.indexOf(one)
+                              description.style.display === 'none'
+                              box.style.opacity = '0.5';
+                              (document.getElementById('name') as HTMLFormElement).value = one.name;
+                              (document.getElementById('description') as HTMLFormElement).value = one.description;
+                              (document.getElementById('start') as HTMLFormElement).value = one.start.toISOString().slice('T',10);
+                              (document.getElementById('end') as HTMLFormElement).value = one.start.toISOString().slice('T',10);
+                              let btn = document.getElementById('submit') as HTMLFormElement;
+                              btn.textContent = 'Save';
+                              btn.setAttribute('onclick', 'save(' + i + ')');
+                              }
+
+                            isDone.addEventListener('change', () => {
+                              description.style.display = 'none';
+                              if (isDone.checked) {
+                                one.isCompleted = true;
+                                box.style.backgroundColor = 'green'
+                              } else {
+                                one.isCompleted = false;
+                                box.style.backgroundColor = 'red'
+
+                              }
+                            });
+
+        /////////////////////////
+
         box.appendChild(isDone);
         box.appendChild(name);
         box.appendChild(description);
@@ -207,7 +205,7 @@ class Item {
         box.appendChild(deleteTask);
         box.appendChild(editTask);
         root.appendChild(box);
-
+        box.classList.add('box')
 
       });
   }
