@@ -46,7 +46,7 @@ function saveData(event) {
     let name = document.getElementById('name').value;
     let description = document.getElementById('description').value;
     const startValue = startInput.value;
-    var tommrowDate = new Date();
+    let tommrowDate = new Date();
     tommrowDate.setDate(tommrowDate.getDate() + 1);
     const endValue = endInput.value;
     let start = startValue ? new Date(startValue) : new Date();
@@ -79,7 +79,7 @@ function createList(arr) {
     });
     arr.forEach((one) => {
         let box = document.createElement('div');
-        let name = document.createElement('h1');
+        let name = document.createElement('h2');
         name.innerText = one.name;
         name.style.width = '200px';
         name.style.margin = '30px';
@@ -123,9 +123,11 @@ function createList(arr) {
             if (isDone.checked) {
                 one.isCompleted = true;
                 box.style.backgroundColor = 'green';
+                window.location.reload();
             }
             else {
                 one.isCompleted = false;
+                window.location.reload();
                 if (difference_In_Days < 0) {
                     box.style.backgroundColor = 'red';
                 }
@@ -188,18 +190,28 @@ function editTheTask(event) {
             list[i].description = document.getElementById('description').value;
             list[i].start = new Date(document.getElementById('start').value);
             list[i].end = new Date(document.getElementById('end').value);
-            //        list[i] = new Item(name, description, start, end, false);
             localStorage.setItem('listItem', JSON.stringify(list));
             window.location.reload();
         }
     });
 }
 function weekly() {
-    let table = document.getElementById('table');
-    let data = list.map(note => ({ name: note.name, start: note.start, end: new Date(note.end), days: [] }));
     var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let today = new Date();
     let todayDay = today.getDay();
+    let table = document.getElementById('table');
+    let data = list.map(note => ({ name: note.name, start: note.start, end: new Date(note.end), days: [], isDone: note.isCompleted }));
+    console.log(data);
+    // let yesterday = new Date()
+    // yesterday.setDate(yesterday.getDate() - 1 );
+    // let inAweek = new Date();
+    // inAweek.setDate(new Date().getDate() + 7);
+    // data = data.filter(each => each.start.getTime() > yesterday.getTime())
+    // data = data.filter(each => each.start.getTime() < inAweek.getTime()) 
+    // data.forEach(element => {
+    //     if(element.end.getTime() > inAweek.getTime()) 
+    //     {element.end = inAweek}
+    //   }); 
     for (let j = 0; j < 7; j++) {
         let th = document.createElement('th');
         th.textContent = week[todayDay];
@@ -232,9 +244,14 @@ function weekly() {
             td.setAttribute('id', String(todayDay));
             if (arr.includes(todayDay)) {
                 td.setAttribute('colspan', String(arr.length));
-                td.style.backgroundColor = getRandomColor();
+                if (element.isDone) {
+                    td.style.backgroundColor = 'green';
+                    td.style.color = 'white';
+                }
+                else {
+                    td.style.backgroundColor = 'moccasin';
+                }
                 td.style.padding = '10px';
-                td.style.color = 'white';
                 td.innerHTML = element.name;
                 break;
             }

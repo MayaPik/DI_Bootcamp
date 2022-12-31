@@ -55,3 +55,15 @@
     margin: auto;
     text-align: center;
   }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    column-gap: 10px;
+   
+  }
+
+  .actions button {
+    font-size:medium;
+  }
