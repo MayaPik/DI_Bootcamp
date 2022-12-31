@@ -45,3 +45,13 @@
 .description {
     display: none;
   }
+
+#weekly {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+  }

@@ -1,3 +1,4 @@
+
 let startInput = document.getElementById('start') as HTMLFormElement;
 let endInput = document.getElementById('end') as HTMLFormElement;
 let submitButton = document.getElementById('submit') as HTMLButtonElement;
@@ -12,7 +13,6 @@ let submitButton = document.getElementById('submit') as HTMLButtonElement;
     } else {
       submitButton.disabled = false;
       submitButton.title= ''
-
     }
   };
 
@@ -88,7 +88,7 @@ class Item {
           }
 }
 
-  createList(list)
+  createList(list);
 
   function createList(arr:[]) {
     list.sort((a: Item, b: Item) => {
@@ -123,65 +123,26 @@ class Item {
         box.style.backgroundColor = 'red'
         }
         
-        ///////////////////
+        
+        box.addEventListener('click', openDescription)
 
-                            box.addEventListener('click', openDescription)
+        function openDescription() {
+          if (description.style.display === 'none') {
+            description.style.display = 'block';
+          } else {
+            description.style.display = 'none';
+          }
+        }
 
-                            function openDescription() {
-                              if (description.style.display === 'none') {
-                                description.style.display = 'block';
-                              } else {
-                                description.style.display = 'none';
-                              }
-                              }
-                        
-                            let isDone = document.createElement('input');
-                            isDone.type = 'checkbox';
-                            isDone.style.width = '40px'
-                            isDone.style.margin = '30px'
-                          
-                            let deleteTask = document.createElement('button');
-                            deleteTask.innerHTML = 'X'
-                            deleteTask.addEventListener('click', deleteTheTask)
-                            deleteTask.style.width = '30px'
-                            deleteTask.style.margin = '30px'
+        let isDone = document.createElement('input');
+        isDone.type = 'checkbox';
+        isDone.style.width = '40px'
+        isDone.style.margin = '30px'
 
-                            function deleteTheTask() {
-                              var dialog = confirm("Delete " + one.name + "?");
-                              if (dialog) {
-                                let index = list.indexOf(one)
-                                if (index > -1) {
-                                  list.splice(index, 1);
-                                  localStorage.setItem('listItem', JSON.stringify(list))
-                                }
-                                root.removeChild(box)
-
-                              }
-                              else {
-                                  console.log('Nothing was deleted')
-                              }
-                            
-                            }
-
-                            let editTask = document.createElement('button');
-                            editTask.innerHTML = 'Edit'
-                            editTask.addEventListener('click', editTheTask)
-                            editTask.style.width = '70px'
-                            editTask.style.margin = '30px'
-
-                            function editTheTask(event: { stopPropagation: () => void; }) {
-                              event.stopPropagation();
-                              let i = list.indexOf(one)
-                              description.style.display === 'none'
-                              box.style.opacity = '0.5';
-                              (document.getElementById('name') as HTMLFormElement).value = one.name;
-                              (document.getElementById('description') as HTMLFormElement).value = one.description;
-                              (document.getElementById('start') as HTMLFormElement).value = one.start.toISOString().slice('T',10);
-                              (document.getElementById('end') as HTMLFormElement).value = one.start.toISOString().slice('T',10);
-                              let btn = document.getElementById('submit') as HTMLFormElement;
-                              btn.textContent = 'Save';
-                              btn.setAttribute('onclick', 'save(' + i + ')');
-                              }
+        if (one.isCompleted) {
+          box.style.backgroundColor = 'green'
+          isDone.checked = true;
+        }
 
                             isDone.addEventListener('change', () => {
                               description.style.display = 'none';
@@ -190,12 +151,31 @@ class Item {
                                 box.style.backgroundColor = 'green'
                               } else {
                                 one.isCompleted = false;
-                                box.style.backgroundColor = 'red'
+                                if (difference_In_Days < 0) {
+                                  box.style.backgroundColor = 'red'
+                                  }
+                                  else {
+                                box.style.backgroundColor = 'moccasin'
+                                  }
 
                               }
-                            });
+                              localStorage.setItem('listItem', JSON.stringify(list))
+                         
+                            });                    
+                          
+                            let deleteTask = document.createElement('button');
+                            deleteTask.id = list.indexOf(one);
+                            deleteTask.innerHTML = 'X'
+                            deleteTask.addEventListener('click', deleteTheTask)
+                            deleteTask.style.width = '30px'
+                            deleteTask.style.margin = '30px'
 
-        /////////////////////////
+                            let editTask = document.createElement('button');
+                            editTask.id = list.indexOf(one);
+                            editTask.innerHTML = 'Edit'
+                            editTask.addEventListener('click', editTheTask)
+                            editTask.style.width = '70px'
+                            editTask.style.margin = '30px'
 
         box.appendChild(isDone);
         box.appendChild(name);
@@ -209,14 +189,117 @@ class Item {
 
       });
   }
+
+
+  function deleteTheTask(event: { target: { id: number; }; }) {
+    let i = event.target.id;
+    var dialog = confirm("Delete " + list[i].name + "?");
+    if (dialog) {
+      if (i > -1) {
+        list.splice(i, 1);
+        localStorage.setItem('listItem', JSON.stringify(list))
+      }
+      window.location.reload();
+    }
+    else {
+        console.log('Nothing was deleted')
+    }
   
+  }
   
-  function save(index:number) {
-    if (index > -1) {
-   list[index].name = (document.getElementById('name') as HTMLFormElement).value;
-   list[index].description = (document.getElementById('description') as HTMLFormElement).value
-   list[index].start = (document.getElementById('start') as HTMLFormElement).value
-   list[index].end = (document.getElementById('end') as HTMLFormElement).value
-   localStorage.setItem('listItem', JSON.stringify(list))
- }
-         }        
+  function editTheTask(event: {
+    target: { id: number; };
+}) {
+    let i = event.target.id;
+    //description.style.display === 'none'
+    //box.style.opacity = '0.5';
+    (document.getElementById('name') as HTMLFormElement).value = list[i].name;
+    (document.getElementById('description') as HTMLFormElement).value = list[i].description;
+    (document.getElementById('start') as HTMLFormElement).value = list[i].start.toISOString().slice('T',10);
+    (document.getElementById('end') as HTMLFormElement).value = list[i].start.toISOString().slice('T',10);
+    let btn = document.getElementById('save') as HTMLButtonElement;
+    btn.addEventListener("click", function() {
+      if (i > -1) {
+        let i = event.target.id;
+        list[i].name = (document.getElementById('name') as HTMLFormElement).value;
+        list[i].description = (document.getElementById('description') as HTMLFormElement).value
+        list[i].start  = new Date((document.getElementById('start') as HTMLFormElement).value)
+        list[i].end = new Date((document.getElementById('end') as HTMLFormElement).value);
+//        list[i] = new Item(name, description, start, end, false);
+        localStorage.setItem('listItem', JSON.stringify(list));
+               window.location.reload();
+
+        }     
+       });
+
+    }
+         
+function weekly() {
+  let table = document.getElementById('table') as HTMLTableElement;
+  let data = list.map(note => ({name: note.name, start: note.start, end: new Date(note.end),days:[]}))
+  var week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  let today = new Date()
+  let todayDay = today.getDay()
+  for (let j=0; j<7; j++){
+    let th = document.createElement('th');
+    th.textContent = week[todayDay]
+    th.setAttribute('id',String(todayDay))
+    todayDay++
+    if (todayDay > 6) {
+      todayDay = 0
+    }
+    table.appendChild(th);
+  }
+
+  data.forEach(element => {
+      const dates = []
+      const addDays = function (this: any, days:number) {
+        const date = new Date(this.valueOf())
+        date.setDate(date.getDate() + days)
+        return date
+      }
+      while (element.start <= element.end) {
+        dates.push(element.start)
+        element.start = addDays.call(element.start, 1)
+      }
+
+   let arr = dates.map(day => new Date(day).getDay())
+   console.log(arr)
+    let tr = document.createElement('tr');
+    let today = new Date()
+    let todayDay = today.getDay()
+    for (let m=0; m<7; m++){
+    let td = document.createElement('td');
+    tr.appendChild(td);
+    td.setAttribute('id',String(todayDay))
+    if(arr.includes(todayDay)) {
+    td.setAttribute('colspan', String(arr.length));
+    td.style.backgroundColor = getRandomColor()
+    td.style.padding = '10px'
+    td.style.color = 'white'
+
+
+    td.innerHTML = element.name
+    break;
+    }
+    todayDay++
+    if (todayDay > 6) {
+     todayDay = 0
+    
+    }
+    }
+    table.appendChild(tr);
+
+  });
+
+}
+weekly()
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
