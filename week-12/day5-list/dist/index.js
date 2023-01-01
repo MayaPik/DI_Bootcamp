@@ -64,6 +64,7 @@ function clearData() {
         root.innerHTML = "";
         list = [];
         localStorage.clear();
+        window.location.reload();
     }
     else {
         console.log('Nothing was deleted');
@@ -81,22 +82,22 @@ function createList(arr) {
         let box = document.createElement('div');
         let name = document.createElement('h2');
         name.innerText = one.name;
-        name.style.width = '200px';
+        name.style.width = '10vw';
         name.style.margin = '30px';
         let description = document.createElement('h2');
         description.classList.add('description');
-        description.style.width = '400px';
+        description.style.width = '10vw';
         description.style.margin = '30px';
         description.innerHTML = one.description;
         let startDate = document.createElement('h3');
-        startDate.innerText = "Start Date: " + new Date(one.start).toDateString();
-        startDate.style.width = '300px';
+        startDate.innerText = "Start: " + new Date(one.start).toDateString();
+        startDate.style.width = '10vw';
         startDate.style.margin = '30px';
         let difference_In_Time = new Date(one.end).getTime() - new Date().getTime();
         let difference_In_Days = Math.round(difference_In_Time / (1000 * 3600 * 24));
         let daysuntil = document.createElement('h3');
-        daysuntil.innerText = "Days to finish the task: " + difference_In_Days;
-        daysuntil.style.width = '200px';
+        daysuntil.innerText = "Days to finish: " + difference_In_Days;
+        daysuntil.style.width = '10vw';
         daysuntil.style.margin = '30px';
         if (difference_In_Days < 0) {
             box.style.backgroundColor = 'red';
@@ -112,7 +113,7 @@ function createList(arr) {
         }
         let isDone = document.createElement('input');
         isDone.type = 'checkbox';
-        isDone.style.width = '40px';
+        isDone.style.width = '5vw';
         isDone.style.margin = '30px';
         if (one.isCompleted) {
             box.style.backgroundColor = 'green';
@@ -138,17 +139,19 @@ function createList(arr) {
             localStorage.setItem('listItem', JSON.stringify(list));
         });
         let deleteTask = document.createElement('button');
-        deleteTask.id = list.indexOf(one);
+        deleteTask.id = String(list.indexOf(one));
         deleteTask.innerHTML = 'X';
         deleteTask.addEventListener('click', deleteTheTask);
-        deleteTask.style.width = '30px';
-        deleteTask.style.margin = '30px';
+        deleteTask.style.width = '4vw';
+        deleteTask.style.height = '4vh';
+        deleteTask.style.margin = '40px';
         let editTask = document.createElement('button');
-        editTask.id = list.indexOf(one);
+        editTask.id = String(list.indexOf(one));
         editTask.innerHTML = 'Edit';
         editTask.addEventListener('click', editTheTask);
-        editTask.style.width = '70px';
-        editTask.style.margin = '30px';
+        editTask.style.width = '6vw';
+        editTask.style.height = '4vh';
+        editTask.style.margin = '40px';
         box.appendChild(isDone);
         box.appendChild(name);
         box.appendChild(description);
@@ -180,8 +183,8 @@ function editTheTask(event) {
     //box.style.opacity = '0.5';
     document.getElementById('name').value = list[i].name;
     document.getElementById('description').value = list[i].description;
-    document.getElementById('start').value = list[i].start.toISOString().slice('T', 10);
-    document.getElementById('end').value = list[i].start.toISOString().slice('T', 10);
+    document.getElementById('start').value = list[i].start.toISOString().slice(Number('T'), 10);
+    document.getElementById('end').value = list[i].end.toString().slice(Number('T'), 10);
     let btn = document.getElementById('save');
     btn.addEventListener("click", function () {
         if (i > -1) {
@@ -197,15 +200,15 @@ function editTheTask(event) {
 }
 function weekly() {
     var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    let inAweek = new Date();
+    inAweek.setDate(inAweek.getDate() + 7);
     let today = new Date();
     let todayDay = today.getDay();
     let table = document.getElementById('table');
     let data = list.map(note => ({ name: note.name, start: note.start, end: new Date(note.end), days: [], isDone: note.isCompleted }));
     console.log(data);
-    // let yesterday = new Date()
-    // yesterday.setDate(yesterday.getDate() - 1 );
-    // let inAweek = new Date();
-    // inAweek.setDate(new Date().getDate() + 7);
     // data = data.filter(each => each.start.getTime() > yesterday.getTime())
     // data = data.filter(each => each.start.getTime() < inAweek.getTime()) 
     // data.forEach(element => {
@@ -244,6 +247,8 @@ function weekly() {
             td.setAttribute('id', String(todayDay));
             if (arr.includes(todayDay)) {
                 td.setAttribute('colspan', String(arr.length));
+                td.style.padding = '10px';
+                td.innerHTML = element.name;
                 if (element.isDone) {
                     td.style.backgroundColor = 'green';
                     td.style.color = 'white';
@@ -251,8 +256,6 @@ function weekly() {
                 else {
                     td.style.backgroundColor = 'moccasin';
                 }
-                td.style.padding = '10px';
-                td.innerHTML = element.name;
                 break;
             }
             todayDay++;
@@ -264,11 +267,11 @@ function weekly() {
     });
 }
 weekly();
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+// function getRandomColor() {
+//   var letters = '0123456789ABCDEF';
+//   var color = '#';
+//   for (var i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }

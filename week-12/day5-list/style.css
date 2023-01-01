@@ -31,7 +31,7 @@
     margin-left: auto;
     margin-right: auto;
     flex-direction:row ;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
 }
 
@@ -53,6 +53,7 @@
     align-items: stretch;
     width: 60vw;
     margin: auto;
+    margin-top: 20vh;
     text-align: center;
   }
 
