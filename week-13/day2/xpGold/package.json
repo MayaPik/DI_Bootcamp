@@ -1,0 +1,22 @@
+{
+  "name": "xpgold",
+  "version": "1.0.0",
+  "main": "date.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hebcal/core": "^3.48.4",
+    "faker": "^5.5.3",
+    "hebcal": "^2.3.2",
+    "readline-sync": "^1.4.10"
+  },
+  "keywords": [
+    "\\"
+  ],
+  "devDependencies": {},
+  "description": ""
+}

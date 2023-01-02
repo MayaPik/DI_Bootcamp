@@ -2,8 +2,6 @@ let markers = []; //The markers
 var infowindow;
 var map;
 
-
-  
 function getInit() {
   const map = new google.maps.Map(
     document.getElementById("map"),

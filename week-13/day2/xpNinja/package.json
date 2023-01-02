@@ -1,0 +1,18 @@
+{
+  "name": "xpninja",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "is-regex": "^1.1.4",
+    "readline-sync": "^1.4.10",
+    "regex": "^0.1.1"
+  },
+  "description": ""
+}
