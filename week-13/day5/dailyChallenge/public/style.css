@@ -1,0 +1,14 @@
+.link {
+    color: blue;
+}
+
+#open {
+    text-align: center;
+}
+
+#register-form, #login-form {
+    font-size: larger;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 2em;
+}
