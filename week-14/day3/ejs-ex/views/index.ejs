@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+    <%- include('partials/navbar'); %>
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="text-center mb-2">Welcome to <%=nameRestaurant%>. 
+                We serve the best pizzas :) 
+            </h2>
+            <h3 class="text-center mb-2"> Here is our menu : </h3>
+        </div>
+        <div class="row">
+            <%  if (pizzaMenu.length != 0) { %>
+            <div class="d-flex flex-row bd-highlight mb-3 justify-content-evenly 
+                        align-items-center mt-5">
+                <% pizzaMenu.forEach(pizza => { %>
+                <div class="card col-4" style="width: 18rem;">
+                    <img src="images/favicon.png" 
+                         class="card-img-top text-center col-md-3 offset-md-3"
+                         style="width: 40%">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza <%=pizza.name%></h5>
+                        <h6 class="card-title">Price <%=pizza.price%>$</h6>
+                        <h6 class="card-title text-center text-primary">Ingredients:</h6>
+                        <p class="card-text text-center">
+                            <span><%=pizza.ingredients.join(", ")%></span>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
+                <% } else { %>
+                <div class="col-md-12">
+                    <h4>We are currently not serving any pizza</h4>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <%- include('partials/footer.ejs'); %>
+</body>
+
+</html>

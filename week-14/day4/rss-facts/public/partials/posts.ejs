@@ -1,0 +1,21 @@
+<div class="posts m-auto">
+    <% posts.forEach(post=> { %>
+    <div class="card post my-4 text-center">
+      <div class="card-header">
+        <%= new Date(post.pubDate).toLocaleDateString("en-il") %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.contentSnippet %></p>
+        <h6>
+          <% post.categories.forEach(category => { %>
+          <span class="badge bg-danger"><%= category %></span>
+          <% }) %>
+        </h6>
+        <a href="<%= post.link %>" target="_blank" class="btn btn-secondary mt-3"
+          >Go to post</a
+        >
+      </div>
+    </div>
+    <% }) %>
+</div>

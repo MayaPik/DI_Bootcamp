@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include("../partials/header.ejs",{currentPage: "home"}) %> <%-
+      include("../partials/posts",{posts}) %> <%- include("../partials/footer")
+      %>
+    </div>
+  </body>
+</html>
