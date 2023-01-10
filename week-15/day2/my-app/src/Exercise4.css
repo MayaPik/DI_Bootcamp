@@ -1,0 +1,28 @@
+.title {
+    background-color: lightblue;
+    color: red;
+}
+
+#logo {
+    width: 100px;
+}
+
+button, input {
+    width: 100px;
+    margin: 10px;
+}
+
+.div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.para {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
