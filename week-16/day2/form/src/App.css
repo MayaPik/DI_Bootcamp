@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+  margin: 1em;
+  background-color: antiquewhite;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.answers {
+  background-color: blueviolet;
+  color: aliceblue;
+  margin: 1em;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
