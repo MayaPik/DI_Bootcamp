@@ -1,0 +1,67 @@
+/* General styles for the calculator */
+.calculator {
+    width: 300px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Styles for the calculator display */
+.calculator__display {
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-size: 36px;
+    text-align: right;
+    overflow: hidden;
+    margin-bottom: 0.9rem;
+}
+
+/* Styles for the calculator buttons */
+.calculator__button {
+    width: 25%;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 24px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+/* Styles for the number buttons */
+.calculator__button--number {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Styles for the operator buttons */
+.calculator__button--operator {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+/* Styles for the equal button */
+.calculator__button--equal {
+    background-color: #4caf50;
+    color: #fff;
+    width: 30%;
+}
+
+/* Styles for the clear button */
+.calculator__button--clear {
+    background-color: #f44336;
+    color: #fff;
+    width: 30%;
+}

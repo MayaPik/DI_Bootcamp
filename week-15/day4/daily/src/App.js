@@ -9,7 +9,6 @@ import React, {Component} from "react";
   </div>
   );
 
-
 class App extends Component {
   constructor(props) {
     super(props);

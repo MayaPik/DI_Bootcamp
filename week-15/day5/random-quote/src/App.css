@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  padding: 3rem 
+}
+
+.App-header {
+  border-radius: 6px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+button {
+  border: 0;
+  color: white;
+  border-radius: 6px;
+  padding: 12px;
+  align-self: center;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.author {
+  font-style: italic;
+  align-self: flex-end;
+  margin-right: 5rem;
+}
