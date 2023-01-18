@@ -1,0 +1,36 @@
+.task-done {
+  text-decoration: line-through;
+  border: 2px black solid;
+  padding: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.task {
+  text-decoration: none;
+  border: 2px black solid;
+  padding: 1em;
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+.input {
+  padding: 1em;
+  border: 0;
+  border-bottom: 1px solid black;
+  width: 70vw;
+}
+.App {
+  text-align: center;
+}
+
+.form {
+  margin-top: 5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 3em;
+}
